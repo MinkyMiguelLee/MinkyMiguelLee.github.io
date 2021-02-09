@@ -1,19 +1,18 @@
-# Example Site settings
-
-#google_analytics: UA-NNNNNNNN-N
+title: 'miguel's world'
+description: "miguel's personal dev blog"
+baseurl: ""
+url: "https://minkymiguellee.github.io"
 
 header_pages:
- - index.md
-#  - about.md
+  - index.md
+  - peter.md
+  - about.md
+  - contact.md
 
-#footer: 'follow us on <a href="https://twitter.com/">twitter</a>'
+style: hacker
 
-style: hacker # dark (default) or light
-listen_for_clients_preferred_style: true # true or false (default)
+footer: 'follow us on <a href="https://twitter.com/">twitter</a>'
 
-plugins:
-  - jekyll-seo-tag
-      
-remote_theme : b2a3e8/jekyll-theme-console
-url                      : "https://minkymiguellee.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
+# Build settings
+markdown: kramdown
+remote_theme: b2a3e8/jekyll-theme-console
