@@ -16,9 +16,9 @@
 lang: en-US
 title: Miguel's World
 email:
-description:
-baseurl: # the optional subpath of your site, e.g. "/blog"
-url: # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+description: Miguel's personal dev blog
+baseurl: ""# the optional subpath of your site, e.g. "/blog"
+url: "https://minkymiguellee.github.io"# the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 author:
   name:
   twitter:
