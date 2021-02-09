@@ -5,6 +5,7 @@ url: "https://minkymiguellee.github.io"
 
 header_pages:
   - index.md
+  - /_posts/first_post.md
 
 style: hacker
 
