@@ -34,11 +34,10 @@ permalink: /miguel
 
 
 4. 이력 및 진행 프로젝트
-
-## GS홈쇼핑 (2019.07 ~ 현재)
-- 4-1. M심의봇(웹 서비스)
-- Google Cloud Vision OCR로 웹 상품 기술서 이미지의 텍스트 추출 / 문제성 키워드 탐지(2019.09 ~ 현재)
-- node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / Google Cloud Vision
+- GS홈쇼핑 (2019.07 ~ 현재)
+    - 4-1. M심의봇(웹 서비스)
+        - Google Cloud Vision OCR로 웹 상품 기술서 이미지의 텍스트 추출 / 문제성 키워드 탐지(2019.09 ~ 현재)
+        - node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / Google Cloud Vision
 
 - 4-2. QA/심의 프로세스 자동화 프로젝트
 - OCR(Google Cloud Vision, 네이버 Clova) 기반의 QA/심의 업무 프로세스 자동화  
