@@ -4,6 +4,6 @@ layout: home
 permalink: /
 ---
 
-# Welcome
+# Welcome to Miguel's Personal Blog!
 
-Bla bla bla bla. Bla bla bla bla bla bla bla bla.
+감자고구마
