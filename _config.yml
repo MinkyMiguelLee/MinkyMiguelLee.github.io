@@ -9,7 +9,7 @@ header_pages:
 
 style: hacker
 
-footer: 'follow us on <a href="https://twitter.com/">twitter</a>'
+footer: 'old tistory <a href="https://ml0000.tistory.com">blog</a>'
 
 # Build settings
 markdown: kramdown
