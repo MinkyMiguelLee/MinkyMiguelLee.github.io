@@ -32,19 +32,21 @@ permalink: /miguel
 
 ##### 4. 이력 및 진행 프로젝트
 ###### GS홈쇼핑 (2019.07 ~ 현재)
-　• 4-1. M심의봇(웹 서비스)
-　　• Google Cloud Vision OCR로 웹 상품 기술서 이미지의 텍스트 추출 / 문제성 키워드 탐지(2019.09 ~ 현재)
-　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / Google Cloud Vision
+　• **4-1. M심의봇(웹 서비스)**
+　　• Google Cloud Vision OCR로 웹 상품 기술서 이미지의 텍스트 추출 / 문제성 키워드 탐지
+　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / 
+　　　Google Cloud Vision
 
 　• 4-2. QA/심의 프로세스 자동화 프로젝트
-　　• OCR(Google Cloud Vision, 네이버 Clova) 기반의 QA/심의 업무 프로세스 자동화  (2020.05 ~ 현재)
-　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / Google Cloud Vision / Naver Clova
+　　• OCR(Google Cloud Vision, 네이버 Clova) 기반의 QA/심의 업무 프로세스 자동화
+　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / 
+　　　Google Cloud Vision / Naver Clova
 
-　• 4-3. Unity, Vuforia, AR Foundation을 통한 AR/VR 애플리케이션 개발(2019.09 ~ 현재)
+　• 4-3. Unity, Vuforia, AR Foundation을 통한 AR/VR 애플리케이션 개발
 　　• Unity3D, C#
 
 　• 4-4. RPA 프로세스 개발/운영
-　　• WinAutomation, Process Robot, UIPath, Akabot(2019.09 ~ 현재)
+　　• WinAutomation, Process Robot, UIPath, Akabot
 
 ###### Vrism (2018.07~2018.09)
 　• 4-5. Unity3D / Vuforia를 통한 AR 애플리케이션 개발
