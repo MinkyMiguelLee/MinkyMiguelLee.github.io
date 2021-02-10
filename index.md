@@ -1,7 +1,7 @@
 ---
 title: /Home
 layout: home
-permalink: /Home
+permalink: /
 ---
 
 # Welcome to Miguel's Personal Blog!
