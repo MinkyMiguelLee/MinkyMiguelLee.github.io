@@ -15,6 +15,8 @@ permalink: /miguel
 - 애플리케이션, 웹, AR/VR 개발 및 유지관리 경험
 
 
+
+
 2. **Technical Skills**
 - 언어: Javascript, C#(Unity3D 기반), C++
 - 프론트엔드: HTML, CSS, jQuery
