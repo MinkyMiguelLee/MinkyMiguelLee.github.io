@@ -6,7 +6,8 @@ permalink: /miguel
 
 # Miguel Minky Lee
 
-1. **개요**
+
+**1. 개요**
 - 1993년 4월 23일 대한민국 서울 출생
 - 상해한국학교(上海韩国外籍人员子女学校, Shanghai Korean School) 졸업
 - 한국항공대학교(Korea Aerospace University) 소프트웨어공학과 졸업
@@ -17,7 +18,7 @@ permalink: /miguel
 
 
 
-2. **Technical Skills**
+**2. Technical Skills**
 - 언어: Javascript, C#(Unity3D 기반), C++
 - 프론트엔드: HTML, CSS, jQuery
 - OS: Linux(Ubuntu), Windows, Mac OS
@@ -42,8 +43,7 @@ permalink: /miguel
 - node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / Google Cloud Vision
 
 - **4-2. QA/심의 프로세스 자동화 프로젝트**
-- OCR(Google Cloud Vision, 네이버 Clova) 기반의 QA/심의 업무 프로세스 자동화  
-(2020.05 ~ 현재)
+- OCR(Google Cloud Vision, 네이버 Clova) 기반의 QA/심의 업무 프로세스 자동화  (2020.05 ~ 현재)
 - node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / Google Cloud Vision / Naver Clova
 
 - **4-3. Unity, Vuforia, AR Foundation을 통한 AR/VR 애플리케이션 개발(2019.09 ~ 현재)**
