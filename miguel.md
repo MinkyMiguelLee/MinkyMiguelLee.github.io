@@ -7,7 +7,7 @@ permalink: /miguel
 # Miguel Minky Lee
 
 ## 1. 개요
-* 1993년 4월 23일 대한민국 서울 출생
+      1993년 4월 23일 대한민국 서울 출생
 - 상해한국학교(上海韩国外籍人员子女学校, Shanghai Korean School) 졸업
 - 한국항공대학교(Korea Aerospace University) 소프트웨어공학과 졸업
 - Vrism - AR/VR/App 개발자(인턴)근무 (2018.07~2018.09)
