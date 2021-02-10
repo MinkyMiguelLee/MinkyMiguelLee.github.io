@@ -6,8 +6,7 @@ permalink: /miguel
 
 # Miguel Minky Lee
 
-
-**1. 개요**
+## 1. 개요
 - 1993년 4월 23일 대한민국 서울 출생
 - 상해한국학교(上海韩国外籍人员子女学校, Shanghai Korean School) 졸업
 - 한국항공대학교(Korea Aerospace University) 소프트웨어공학과 졸업
@@ -15,10 +14,7 @@ permalink: /miguel
 - GS홈쇼핑 - 소프트웨어 엔지니어로 근무 (2019.07 ~ 현재)
 - 애플리케이션, 웹, AR/VR 개발 및 유지관리 경험
 
-
-
-
-**2. Technical Skills**
+### 2. Technical Skills**
 - 언어: Javascript, C#(Unity3D 기반), C++
 - 프론트엔드: HTML, CSS, jQuery
 - OS: Linux(Ubuntu), Windows, Mac OS
@@ -29,16 +25,14 @@ permalink: /miguel
 - IDE : Visual Studio Product (Visual Studio 2018, Visual Studio Code)
 - RPA(로보틱 프로세스 자동화): WinAutomation, ProcessRobot, UiPath, Akabot
 
-
-3. **관심 분야**
+#### 3. 관심 분야
 - AR/VR 애플리케이션 개발
 - 모바일/pc게임 개발
 - 웹 개발(프론트엔드)
 
-
-4. **이력 및 진행 프로젝트**
+##### 4. 이력 및 진행 프로젝트
 - **GS홈쇼핑 (2019.07 ~ 현재)**
-- **4-1. M심의봇(웹 서비스)*
+- **4-1. M심의봇(웹 서비스)**
 - Google Cloud Vision OCR로 웹 상품 기술서 이미지의 텍스트 추출 / 문제성 키워드 탐지(2019.09 ~ 현재)
 - node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / Google Cloud Vision
 
