@@ -1,4 +1,4 @@
-title: 'miguel world'
+title: 'World Of Miguel'
 description: "miguel personal dev blog"
 baseurl: ""
 url: "https://minkymiguellee.github.io"
@@ -9,7 +9,7 @@ header_pages:
 
 style: hacker
 
-footer: 'old tistory <a href="https://ml0000.tistory.com">blog</a>'
+footer: 'contact <ml0000@naver.com>'
 
 # Build settings
 markdown: kramdown
