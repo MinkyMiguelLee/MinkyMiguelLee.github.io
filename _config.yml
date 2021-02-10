@@ -10,7 +10,7 @@ header_pages:
 
 style: hacker
 
-footer: 'contact <ml0000@naver.com>'
+footer: 'contact - ml0000@naver.com'
 
 # Build settings
 markdown: kramdown
