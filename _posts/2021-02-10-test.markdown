@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "first porst!"
+title:  "first post!"
 date:   2021-02-10 18:20:00 +0100
 categories:
 ---
