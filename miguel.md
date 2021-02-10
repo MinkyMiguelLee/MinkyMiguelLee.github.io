@@ -4,7 +4,7 @@ layout: page
 permalink: /miguel
 ---
 
-# Miguel Minky Lee
+# Minki Lee 이민기 李玟基 Miguel
 
 
 ## 1. 개요
@@ -105,7 +105,7 @@ permalink: /miguel
 　• **4-4. RPA process development / operation**
  　• WinAutomation, Process Robot, UIPath, Akabot
 
- ###### Vrism (2018.07~2018.09)
+ ##### Vrism (2018.07~2018.09)
 　• **4-5. AR application development**
 　　• Unity3D / Vuforia
 
