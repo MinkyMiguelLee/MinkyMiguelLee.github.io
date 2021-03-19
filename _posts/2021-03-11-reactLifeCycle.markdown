@@ -2,7 +2,7 @@
 layout: post
 title:  "React - LifeCycle"
 date:   2021-03-10 15:44:00 +0100
-categories:
+categories: "study"
 ---
 
 # React의 LifeCycle

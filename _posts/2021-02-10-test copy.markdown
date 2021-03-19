@@ -2,7 +2,7 @@
 layout: post
 title:  "first post!"
 date:   2021-02-10 18:20:00 +0100
-categories:
+categories: "thoughts"
 ---
 
 # 블로그를 만들었다
