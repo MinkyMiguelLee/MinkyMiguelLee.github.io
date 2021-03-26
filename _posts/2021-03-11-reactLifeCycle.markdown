@@ -14,8 +14,10 @@ categories: "study"
 
 ## Mounting : 컴포넌트가 브라우저 상에 나타나는 것
 
-• constructor : 생성자 함수. 컴포넌트가 처음 브라우저에 나타날 때, 만들어지는 과정에서 가장 처음 실행되는 함수. 
-초기값(component가 가지고 있을 state 등...)을 세팅한다던지 컴포넌트 생성 과정에서 선행되어야 하는 작업이 있다면 constructor에서 수행한다.
+• constructor : 생성자 함수. 컴포넌트가 처음 브라우저에 나타날 때, 만들어지는 과정에서 
+                가장 처음 실행되는 함수. 
+                초기값(component가 가지고 있을 state 등...)을 세팅한다던지 컴포넌트 
+                생성 과정에서 선행되어야 하는 작업이 있다면 constructor에서 수행한다.
 ```
 constructor(props){
     super(props);
@@ -75,7 +77,8 @@ shouldComponentUpdate(nextProps, nextState){
 ```
 getSnapshotBeforeUpdate(prevProps, prevState){
     // 이전의 상태값들을 받아오므로, 이전 상태값이 필요하다면 활용 가능하다.
-    // 여기서 리턴한 값을 componentDidupdate에서 snapshot이라는 parameter로 받아서 사용할 수 있다.
+    // 여기서 리턴한 값을 componentDidupdate에서 snapshot이라는 parameter로 
+    // 받아서 사용할 수 있다.
 }
 
 ```
@@ -94,7 +97,8 @@ componentDidUpdate(prevProps, prevState, snapshot){
 • componentWillUnmount : componentDidMount에서 선언한 이벤트 리스너를 없애는 작업 등을 수행함.
 ```
 componentWillUnmount(){
-    // 컴포넌트가 사라질 때 수행한다. 특정 조건일 때 이 함수를 호출하여 특정 작업을 수행하도록 할 수 있다.
+    // 컴포넌트가 사라질 때 수행한다. 특정 조건일 때 이 함수를 호출하여 특정 작업을 
+    // 수행하도록 할 수 있다.
 }
 
 ```
