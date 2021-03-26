@@ -7,12 +7,14 @@ categories: "study"
 
 # React의 LifeCycle
 &nbsp;
+&nbsp;
 ![LifeCycle](../../../../assets/images/lifeCycle.png)
 
 위 이미지에 표현된 각각의 박스들은 모두 일종의 함수이다.
 
 -----------------------------------------------------------------------
 ## Mounting : 컴포넌트가 브라우저 상에 나타나는 것
+&nbsp;
 &nbsp;
 • **constructor** : 생성자 함수. 컴포넌트가 처음 브라우저에 나타날 때, 만들어지는 과정에서 
                 가장 처음 실행되는 함수. 
@@ -61,6 +63,7 @@ categories: "study"
 
 ## Updating : 컴포넌트의 props나 State가 변경된 것
 &nbsp;
+&nbsp;
 • **shouldComponentUpdate** : 컴포넌트가 업데이트되는 성능을 최적화하고자 할 때 사용한다.
                           만약 부모 컴포넌트가 re-render되면, 그 부모 컴포넌트의 자식 
                           컴포넌트들도 모두 render 함수를 수행하게 되는데, 이러한 작업이 
@@ -103,6 +106,7 @@ categories: "study"
 
 ## Unmounting : 컴포넌트가 브라우저 상에서 사라지는 것
 &nbsp;
+&nbsp;
 • **componentWillUnmount** : componentDidMount에서 선언한 이벤트 리스너를 없애는 작업 등을 수행
 ```
     componentWillUnmount(){
@@ -115,6 +119,7 @@ categories: "study"
 -----------------------------------------------------------------------
 
 ## on Error : 컴포넌트에 에러가 발생했을 때 유용하게 사용 가능한 API!
+&nbsp;
 &nbsp;
 • **componentDidCatch** : React 함수에서 에러 발생 시, 리액트 앱이 크래쉬된다. 이러한 상황에 
                       componentDidCatch를 사용하여 크래쉬를 방지하고 특정 작업을 
