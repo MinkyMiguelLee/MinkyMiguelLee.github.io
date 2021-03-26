@@ -4,6 +4,8 @@ layout: page
 permalink: /miguelKr
 ---
 
+![miguel](../assets/images/migProfile.png)
+
 # Minki Lee 이민기 李玟基 Miguel
 
 
