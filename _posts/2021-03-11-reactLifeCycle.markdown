@@ -7,7 +7,7 @@ categories: "study"
 
 # React의 LifeCycle
 
-![LifeCycle](../../../../assets/images/lifeCycle.png)
+![LifeCycle](../../../../assets/images/lifeCycle.png = 250x)
 
 위 이미지에 표현된 각각의 박스들은 모두 일종의 함수이다.
 
