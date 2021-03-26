@@ -6,7 +6,7 @@ categories:
 ---
 
 # M심의Bot 프로젝트 리팩토링
-
+&nbsp;
 미뤄왔던 M심의Bot 프로젝트의 리팩토링 작업을 시작했다. 두 선배의 도움을 받아 일단 Mega Process의 API들을 모두 정리하여
 별도 함수로 정리했고, OAS 형태로 Document를 작성하며 진행중이다.
 
