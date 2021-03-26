@@ -7,7 +7,7 @@ categories: "study"
 
 # React의 LifeCycle
 
-![LifeCycle](../assets/images/lifeCycle.png)
+![LifeCycle](/assets/images/lifeCycle.png)
 
 위 이미지에 표현된 각각의 박스들은 모두 일종의 함수이다.
 
@@ -20,6 +20,7 @@ constructor(props){
     super(props);
     ...
 }
+
 ```
 
 • getDerivedStateFromProps : Props로 받은 값을 State에 동기화시키고 싶을 때 사용. 
