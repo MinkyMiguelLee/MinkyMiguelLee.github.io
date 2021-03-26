@@ -7,14 +7,13 @@ categories: "study"
 
 # React의 LifeCycle
 
-<div style="width:50%">
 ![LifeCycle](../../../../assets/images/lifeCycle.png)
-</div>
 
 위 이미지에 표현된 각각의 박스들은 모두 일종의 함수이다.
 
 
 ## Mounting : 컴포넌트가 브라우저 상에 나타나는 것
+
 • constructor : 생성자 함수. 컴포넌트가 처음 브라우저에 나타날 때, 만들어지는 과정에서 가장 처음 실행되는 함수. 
 초기값(component가 가지고 있을 state 등...)을 세팅한다던지 컴포넌트 생성 과정에서 선행되어야 하는 작업이 있다면 constructor에서 수행한다.
 ```
