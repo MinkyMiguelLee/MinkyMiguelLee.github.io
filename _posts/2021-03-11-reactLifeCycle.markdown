@@ -29,8 +29,8 @@ constructor(props){
 Mounting(새로운 컴포넌트 생성) 과정에서도 사용되고, props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
 ```
 static getDerivedStateFromProps(nextProps, prevState){
-    //nextProps : state에 넣어줄 props 값
-    //prevState : 업데이트 되기 전의, 현재 state
+    // nextProps : state에 넣어줄 props 값
+    // prevState : 업데이트 되기 전의, 현재 state
 
     if(prevState.value !== nextProps.value){
         return{
