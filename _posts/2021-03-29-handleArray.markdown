@@ -82,18 +82,17 @@ categories: "study"
 &nbsp;
    • shouldComponentUpdate 함수를 사용하여 불필요한 렌더링을 수행하지 않을 수 있다.
 ```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                                                                              │
-│      shouldComponentUpdate(nextProps, nextState) {                           │
-│      // state값이 이전과 달라지면, 새로 렌더링한다.                                   │
-│      if(this.state !== nextState){                                           │
-│         return true;                                                         │
-│      }                                                                       │
-│      // props의 info값이 이전과 달라지면, 새로 렌더링한다.                             │
-│      return this.props.info !== nextProps.info;                              │
-│   }                                                                          │
-│                                                                              │
-└──────────────────────────────────────────────────────────────────────────────┘     
+┌------------------------------------------------------------------------------┐
+|                                                                              |
+|      shouldComponentUpdate(nextProps, nextState) {                           |
+|      // state값이 이전과 달라지면, 새로 렌더링한다.                                   |
+|      if(this.state !== nextState){                                           |
+|         return true;                                                         |
+|      }                                                                       |
+|      return this.props.info !== nextProps.info;                              |
+|   }                                                                          |
+|                                                                              |
+└------------------------------------------------------------------------------┘     
 ```
 
 
