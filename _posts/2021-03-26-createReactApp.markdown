@@ -15,11 +15,6 @@ visual studio code(VSCode) 에서 확장 프로그램 'Reactjs code snippets'를
    code snippet이 추천하는대로 엔터를 누르면 자동으로 import해준다.
 3. scu를 입력하고 엔터를 누르면, shouldComponentUpdate함수를 생성해준다.
 &nbsp;
-.
-&nbsp;
-.
-&nbsp;
-.
 &nbsp;
 위의 경우와 같이 reactJS에서 사용되는 다양한 메소드, 클래스 등을 단축키를 통해 생성할 수 있다.
 
