@@ -23,7 +23,7 @@ visual studio code(VSCode) 에서 확장 프로그램 'Reactjs code snippets'를
 &nbsp;
 위의 경우와 같이 reactJS에서 사용되는 다양한 메소드, 클래스 등을 단축키를 통해 생성할 수 있다.
 
-[reactJSsnippetsShortCut](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
+[reactJS code snippets - 단축키 목록](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
 
 
 
