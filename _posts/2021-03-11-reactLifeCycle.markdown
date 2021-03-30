@@ -17,9 +17,9 @@ categories: "study"
 &nbsp;
 &nbsp;
 • **constructor** : 생성자 함수. 컴포넌트가 처음 브라우저에 나타날 때, 만들어지는 과정에서 
-                    가장 처음 실행되는 함수. 
-                    초기값(component가 가지고 있을 state 등...)을 세팅한다던지 컴포넌트 
-                    생성 과정에서 선행되어야 하는 작업이 있다면 constructor에서 수행한다.
+                  가장 처음 실행되는 함수. 
+                  초기값(component가 가지고 있을 state 등...)을 세팅한다던지 컴포넌트 
+                  생성 과정에서 선행되어야 하는 작업이 있다면 constructor에서 수행한다.
 ```
   constructor(props){
     super(props);
@@ -29,8 +29,8 @@ categories: "study"
 
 ```
 • **getDerivedStateFromProps** :  Props로 받은 값을 State에 동기화시키고 싶을 때 사용. 
-                                  Mounting(새로운 컴포넌트 생성) 과정에서도 사용되고, 
-                                  props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
+                                Mounting(새로운 컴포넌트 생성) 과정에서도 사용되고, 
+                                props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
 ```
   static getDerivedStateFromProps(nextProps, prevState){
     // nextProps : state에 넣어줄 props 값
