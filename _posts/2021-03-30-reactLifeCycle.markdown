@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React - Functional Style Lifecycle"
-date:   2021-03-30 15:44:00 +0100
+date:   2021-03-30 17:44:00 +0100
 categories:
 ---
 
