@@ -7,6 +7,7 @@ categories:
 
 # functional style과 class style
 &nbsp;
+&nbsp;
 • 기존의 리액트에서, class style은 구현이 복잡하고 신경써야 할 부분이 더 많지만 lifecycle 처리, 
   state 조작 등 더욱 상세한 처리가 가능했고, functional style은 구현이 간단하지만 state와 
   lifecycle 처리가 불가능해 단순한 값 전달을 수행하는 컴포넌트에만 사용했다.
