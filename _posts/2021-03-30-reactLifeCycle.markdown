@@ -34,6 +34,14 @@ categories:
     return function cleanUp(){}
   }, [이 배열의 원소들이 이전과 달라졌을 때만 useEffect의 첫 번째 인자인 function()이 수행된다]);
 ```
+• skipping effect를 응용하여, component가 생성될 때만(componentDidMount일 때만) 실행되도록 side effect를 정의할 수 있다.
+  이 때, 이 side effect의 clean up은 componentWillUnmount와 동일하게 작동한다.
+```
+  // 이 side effect의 두 번째 인자, 즉 배열에 빈 배열을 전달하면 update일 때는 실행되지 않고 최초 1회만 실행된다.
+  useEffect(function(){
+    return function cleanUp(){}
+  }, []);
+```
 
 
 
