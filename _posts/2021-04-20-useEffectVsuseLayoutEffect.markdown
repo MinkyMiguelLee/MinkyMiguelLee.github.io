@@ -29,6 +29,7 @@ categories:
 > • useLayoutEffect내의 함수는 DOM이 업데이트 되면 바로 동기적으로 실행이 되고 이러한 과정은 브라우저가 화면에 렌더링하기 이전에 수행된다. 따라서 사용자는 업데이트 되기 전의 화면을 보지 않게 된다.
 &nbsp;
 &nbsp;
+
 [reactJS Hook API reference](https://ko.reactjs.org/docs/hooks-reference.html#useeffect)
 
 

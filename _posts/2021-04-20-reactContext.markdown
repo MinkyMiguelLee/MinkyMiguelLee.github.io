@@ -16,9 +16,11 @@ categories:
 > • 이럴 때 Context라는 개념을 사용하면 데이터를 주고 받을 때 위와  같은 번거로운 과정을 거치지 않아도 마치 전역 변수처럼 특정 블록단위 내에서 데이터를 자유롭게 공유할 수 있다.
 &nbsp;
 &nbsp;
+
 • 아직 사용해보지는 않았지만, Context를 사용해야 할 요인이 충분한 Component가 몇 개 있으니 해당 Component들에 Context를 적용할 예정이다.
 &nbsp;
 &nbsp;
+
 • 사용해본 후 사용법과 후기를 작성해야겠다.
 &nbsp;
 &nbsp;
