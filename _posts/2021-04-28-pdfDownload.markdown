@@ -16,7 +16,8 @@ categories:
 &nbsp;
 이 문제를 해결하기 위해 나는 puppeteer를 활용하기로 하였다. 우선, node.js로 구현되어 있는 백엔드에 puppeteer를 통한 화면의 내용을 buffer 형태로
 만들어 frontend로 반환하는 api를 구현하였다.
-
+&nbsp;
+&nbsp;
 ```
   // backend -> utilTestController.js
   module.exports.printPDF = async (req, res) => {
@@ -36,9 +37,11 @@ categories:
     }
   };
 ```
-
+&nbsp;
+&nbsp;
 그 다음, 반환받은 buffer를 파일 형식으로 떨어트리도록 frontend에 함수를 구현하였다.
-
+&nbsp;
+&nbsp;
 ```
   // frontend -> ViewSpecificModal.js
   const getPDF = () => {
@@ -65,15 +68,22 @@ categories:
     .catch(err => console.log('123'))
   }
 ```
+&nbsp;
+&nbsp;
 이렇게 프론트엔드, 백엔드에 구현하게 되면, 백엔드 API의
+&nbsp;
+&nbsp;
 ```
   await page.goto('https://google.com', { waitUntil: 'networkidle0' });
 ```
+&nbsp;
+&nbsp;
 에서 볼 수 있듯이 goto함수 내부에 파라미터로 주어진 url을 헤드리스로 열고, 그 내용을 pdf buffer 형태로 만들게 된다.
 이 때, 나는 한 가지 작업을 더 해주어야 한다는 것을 알게 되었다. 나는 화면의 일부 내용만을 pdf로 다운받고자 하기 때문에,
 일부 내용을 떼어 별도 화면을 만들어주어야 한다는 것이다. 따라서, 나는 React의 react-router-dom 패키지를 활용하여
 메인 경로가 아닌 /pdf 경로를 별도로 만들어주고, 그 화면에 dom을 전달하여 화면을 구성하도록 하였다.
-
+&nbsp;
+&nbsp;
 ```
   // frontend -> App.js
   import PageTop from './components/PageTop';
@@ -98,14 +108,15 @@ categories:
   }
 
   export default App;
-
 ```
-
+&nbsp;
+&nbsp;
 이후, props 형태의 데이터 전달을 시도해 보았지만 headless chrome이 화면을 열 때는 해당 화면이 데이터를 가지고 있지 않는 문제가 발생했다.
 따라서, pdf 다운로드 버튼을 누르는 시점에 dom의 innerHTML string을 백엔드에 전달하고, 화면이 열릴 때 그 데이터를 불러와 화면을 그리도록 하였다.
 백엔드의 printPDF API가 구현되어 있는 파일에 tmpInnerHtml라는 전역변수를 설정하고 tmpInnerHtml = params.div; 의 형태로
 파라미터를 저장하였다가, 화면이 열릴 때 다음과 같은 형태로 해당 내용을 불러와 화면을 그린다.
-
+&nbsp;
+&nbsp;
 ```
   // frontend -> Pdf.js
   const Pdf = () => {
@@ -137,7 +148,8 @@ categories:
     );
   };
 ```
-
+&nbsp;
+&nbsp;
 아직 정확히 파악하지 못한 문제로 인해 다운받은 PDF의 화면 구성이 다소 엉망이긴 하지만, 이런 과정을 통해 원하는 내용을 PDF로 다운로드 받는 데 성공하였다.
 이제 화면 구성 정리를 마치면 원하는 기능 구현은 마무리될 것 같다.
 
