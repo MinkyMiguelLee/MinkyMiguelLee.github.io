@@ -19,23 +19,23 @@ categories:
 &nbsp;
 &nbsp;
 ```
-  // backend -> utilTestController.js
-  module.exports.printPDF = async (req, res) => {
-    const params = req.body;
-    try {
-      tmpInnerHtml = params.div;
-      const browser = await puppeteer.launch({ headless: true });
-      const page = await browser.newPage();
-      await page.goto('http://localhost:3000/pdf', { waitUntil: 'networkidle0' });
-      const pdf = await page.pdf({ format: 'A4' });
-      await browser.close();
-      res.set({ 'Content-Type': 'application/pdf', 'Content-Length': pdf.length });
-      res.status(200).send(pdf);
-    } catch (err) {
-      logger.error(err);
-      res.status(500).send(err.message);
-    }
-  };
+// backend -> utilTestController.js
+module.exports.printPDF = async (req, res) => {
+  const params = req.body;
+  try {
+    tmpInnerHtml = params.div;
+    const browser = await puppeteer.launch({ headless: true });
+    const page = await browser.newPage();
+    await page.goto('http://localhost:3000/pdf', { waitUntil: 'networkidle0' });
+    const pdf = await page.pdf({ format: 'A4' });
+    await browser.close();
+    res.set({ 'Content-Type': 'application/pdf', 'Content-Length': pdf.length });
+    res.status(200).send(pdf);
+  } catch (err) {
+    logger.error(err);
+    res.status(500).send(err.message);
+  }
+};
 ```
 &nbsp;
 &nbsp;
@@ -43,41 +43,35 @@ categories:
 &nbsp;
 &nbsp;
 ```
-  // frontend -> ViewSpecificModal.js
-  const getPDF = () => {
-    const config = {
-      method: 'post',
-      url: 'http://10.53.39.106:4000/api/printPDF',
-      headers: { 'Accept': 'application/pdf' },
-      responseType: 'arraybuffer',
-      data : {div : document.querySelector('#specificView').innerHTML}
-    };
-  
-    return axios(config);
-  }
+// frontend -> ViewSpecificModal.js
+const getPDF = () => {
+  const config = {
+    method: 'post',
+    url: 'http://10.53.39.106:4000/api/printPDF',
+    headers: { 'Accept': 'application/pdf' },
+    responseType: 'arraybuffer',
+    data : {div : document.querySelector('#specificView').innerHTML}
+  };
 
-  const downloadPdf = () => {
-    return getPDF() // API call
-    .then((response) => {
-      const blob = new Blob([response.data], {type: 'application/pdf'});
-      const link = document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = `your-file-name.pdf`;
-      link.click();
-    })
-    .catch(err => console.log('123'))
-  }
+  return axios(config);
+}
+
+const downloadPdf = () => {
+  return getPDF() // API call
+  .then((response) => {
+    const blob = new Blob([response.data], {type: 'application/pdf'});
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = `your-file-name.pdf`;
+    link.click();
+  })
+  .catch(err => console.log('123'))
+}
 ```
 &nbsp;
 &nbsp;
 이렇게 프론트엔드, 백엔드에 구현하게 되면, 백엔드 API의
-&nbsp;
-&nbsp;
-```
-  await page.goto('https://google.com', { waitUntil: 'networkidle0' });
-```
-&nbsp;
-&nbsp;
+await page.goto('https://google.com', { waitUntil: 'networkidle0' });
 에서 볼 수 있듯이 goto함수 내부에 파라미터로 주어진 url을 헤드리스로 열고, 그 내용을 pdf buffer 형태로 만들게 된다.
 이 때, 나는 한 가지 작업을 더 해주어야 한다는 것을 알게 되었다. 나는 화면의 일부 내용만을 pdf로 다운받고자 하기 때문에,
 일부 내용을 떼어 별도 화면을 만들어주어야 한다는 것이다. 따라서, 나는 React의 react-router-dom 패키지를 활용하여
@@ -85,29 +79,29 @@ categories:
 &nbsp;
 &nbsp;
 ```
-  // frontend -> App.js
-  import PageTop from './components/PageTop';
-  import Pdf from './components/Pdf';
-  import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-  import { Grid } from '@material-ui/core';
-  import './style/PageTop.css'
+// frontend -> App.js
+import PageTop from './components/PageTop';
+import Pdf from './components/Pdf';
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Grid } from '@material-ui/core';
+import './style/PageTop.css'
 
-  function App() {
-    return (
-      <Router>
-        <Switch>
-          <Route exact path="/">
-              <Grid container spacing={1}>
-                <PageTop defaultPageName={'검출 실행'} defaultPageNum={0} />
-              </Grid>
-          </Route>
-          <Route path="/pdf" component={Pdf}/>
-        </Switch>
-      </Router>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/">
+            <Grid container spacing={1}>
+              <PageTop defaultPageName={'검출 실행'} defaultPageNum={0} />
+            </Grid>
+        </Route>
+        <Route path="/pdf" component={Pdf}/>
+      </Switch>
+    </Router>
+  );
+}
 
-  export default App;
+export default App;
 ```
 &nbsp;
 &nbsp;
@@ -118,35 +112,35 @@ categories:
 &nbsp;
 &nbsp;
 ```
-  // frontend -> Pdf.js
-  const Pdf = () => {
-    const [tmpInnerHtml, setTmpInnerHtml] = useState('');
+// frontend -> Pdf.js
+const Pdf = () => {
+  const [tmpInnerHtml, setTmpInnerHtml] = useState('');
 
-    useEffect(()=> {
-      const config = {
-        method: 'post',
-        url: 'http://10.53.39.106:4000/api/getInnerHtml',
-        headers: {},
-        data : {div : '123'}
-      };
-    
-      axios(config)
-        .then((response) => {
-          setTmpInnerHtml(response.data.tmpInnerHtml);
-          document.querySelector('#mainScreen').childNodes[5].childNodes[0].style.height = '100%';
-          document.querySelector('#mainScreen').childNodes[5].childNodes[0].style.overflow = 'visible';
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, [])
+  useEffect(()=> {
+    const config = {
+      method: 'post',
+      url: 'http://10.53.39.106:4000/api/getInnerHtml',
+      headers: {},
+      data : {div : '123'}
+    };
+  
+    axios(config)
+      .then((response) => {
+        setTmpInnerHtml(response.data.tmpInnerHtml);
+        document.querySelector('#mainScreen').childNodes[5].childNodes[0].style.height = '100%';
+        document.querySelector('#mainScreen').childNodes[5].childNodes[0].style.overflow = 'visible';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [])
 
-    return (
-      <div>
-        <div id='mainScreen' dangerouslySetInnerHTML={{__html : tmpInnerHtml}} />
-      </div> 
-    );
-  };
+  return (
+    <div>
+      <div id='mainScreen' dangerouslySetInnerHTML={{__html : tmpInnerHtml}} />
+    </div> 
+  );
+};
 ```
 &nbsp;
 &nbsp;
