@@ -20,10 +20,10 @@ permalink: /miguelKr
 
 ### 2. Technical Skills
 　• 언어: Javascript, C#(Unity3D 기반), C++
-　• 프론트엔드: HTML, CSS, jQuery
+　• 프론트엔드: HTML, CSS, jQuery, React.js
 　• OS: Linux(Ubuntu), Windows, Mac OS
 　• 데이터베이스: MongoDB, MySQL
-　• 프레임워크: 익스프레스(Node.js)
+　• 프레임워크: 익스프레스(Node.js) w/OAS, SwaggerAPI
 　• 클라우드 : AWS, 구글 클라우드 플랫폼, 네이버 클라우드
 　• CI/CD : Jenkins, Git(GitLab, Github)
 　• IDE : Visual Studio Product (Visual Studio 2018, Visual Studio Code)
@@ -41,7 +41,7 @@ permalink: /miguelKr
 　• **4-1. M심의봇(웹 서비스)**
 　　• Google Cloud Vision OCR로 웹 상품 기술서 이미지의 텍스트 추출 / 문제성 키워드 탐지
 　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / 
-　　　Google Cloud Vision
+　　　Google Cloud Vision/ React.js / OAS / SwaggerAPI
 
 　• **4-2. QA/심의 프로세스 자동화 프로젝트**
 　　• OCR(Google Cloud Vision, 네이버 Clova) 기반의 QA/심의 업무 프로세스 자동화

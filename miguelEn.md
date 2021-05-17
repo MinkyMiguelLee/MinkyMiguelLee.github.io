@@ -18,10 +18,10 @@ permalink: /miguelEn
 
 ## 2. Technical Skills
 　• Languages: JavaScript, C#(especially for Unity3D), C++
-　• Front-End: HTML, CSS, jQuery
+　• Front-End: HTML, CSS, jQuery, React.js
 　• Operating Systems: Linux(Ubuntu), Windows, Mac OS
 　• Database: MongoDB, MySQL
-　• Framework: Express(Node.js)
+　• Framework: Express(Node.js) w/OAS, SwaggerAPI
 　• Cloud : AWS, Google Cloud Platform
 　• CI/CD : Jenkins, Git(GItLab, Github)
 　• IDE : Visual Studio Product(Visual Studio 2018, Visual Studio Code)
@@ -38,7 +38,7 @@ permalink: /miguelEn
 　　• Text extraction of web product description images with 
 　　　Google Cloud Vision OCR / detect problematic keywords
 　　• Node.js / Express.js / CSS / MongoDB / AWS EC2 / AWS Lambda / 
-　　　Google Cloud Vision
+　　　Google Cloud Vision / React.js / OAS / SwaggerAPI
 
 　• **4-2. QA/Review process automation project**
 　　• work process automation for QA/review tasks. based on OCR
