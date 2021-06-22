@@ -32,6 +32,8 @@ SSH 사용이 가능한 클라이언트 툴이 있으면 좋겠다는 생각을 
   - 화면 좌측 Hosts 메뉴 -> new host 버튼을 통해 새로운 host 등록
   - 상단 블록에 구분을 위한 label과 public IP 주소 입력
   - 하단 SSH/Mosh 블록에 유저명, key(1번에서 등록한 pem 키 선택), startup snippet(2번에서 등록한 snippet 선택) 입력 후 저장
+
+
 &nbsp;
 &nbsp;
 이 세 단계를 통해 등록한 Host를 더블클릭하면, 손쉽게 SSH 접근이 가능하다.
