@@ -29,5 +29,6 @@ categories:
 &nbsp;
 &nbsp;
 ![SpringBootFileStructure](../../../../assets/images/SpringBoot_Structure.png)
+&nbsp;
 생성 및 Import가 완료된 후의 SpringBoot 프로젝트 구조
 
