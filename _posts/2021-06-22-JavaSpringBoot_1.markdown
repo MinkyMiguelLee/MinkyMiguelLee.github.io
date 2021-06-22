@@ -25,7 +25,7 @@ categories:
     - Spring Web, Thymeleaf(Template Engine)
 
 &nbsp;
-1. 생성된 프로젝트를 IntelliJ에서 Import
+3. 생성된 프로젝트를 IntelliJ에서 Import
 &nbsp;
 &nbsp;
 ![SpringBootFileStructure](../../../../assets/images/SpringBoot_Structure.png)
