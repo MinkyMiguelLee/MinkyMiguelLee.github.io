@@ -12,9 +12,7 @@ categories:
 - Spring Boot는 static과 Template화 된 웰컴 페이지를 모두 지원한다. 먼저, Spring Boot는 지정된 정적 파일 위치에서 index.html을 찾아본다. 이 떄, 해당 위치에 파일이 존재하지 않으면 index 템플릿을 찾아보게 된다. 둘 중 하나라도 찾는 데 성공한다면 그 페이지가 자동으로 어플리케이션의 웰컴 페이지로 사용된다.
 &nbsp;
 2. **controller & template**
-
 &nbsp;
-
 ```
     // [HelloController]
 
@@ -35,8 +33,9 @@ categories:
     }
 ```
 &nbsp;
+&nbsp;
 ![SpringBoot Template structure](../../../../assets/images/template_structure.png)
 - 컨트롤러에서 리턴 값으로 문자를 반환하면, 뷰 리졸버(viewResolver)가 화면을 template에서 찾아 처리한다.
-- 스프링 부트 템플릿엔진 기본 viewName 매핑 -> 
-  'resources:templates/'+{viewName}+'.html'
+- 스프링 부트 템플릿엔진 기본 viewName 매핑 ->
+    'resources:templates/'+{viewName}+'.html'
 
