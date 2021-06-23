@@ -18,9 +18,8 @@ categories:
   ./gradlew build
 
 ```
-
 - 빌드가 완료되면 해당 디렉토리에 build 폴더가 생성된다.
-
+&nbsp;
 • **2. 빌드 완료된 프로젝트 실행**
 - 해당 프로젝트 디렉토리의 /build/libs/ 안에 생성된 .jar 파일을 다음 커맨드를 사용하여 실행한다.
 &nbsp;
@@ -28,7 +27,7 @@ categories:
 ```
   java -jar hello-spring-0.0.1-SNAPSHOT.jar
 ``` 
-
+&nbsp;
 • **3. 정상적으로 빌드되지 않을 때**
 - 다음 커맨드를 사용하면 build 폴더 자체가 삭제된다.
 &nbsp;
