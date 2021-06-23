@@ -4,6 +4,6 @@ layout: home
 permalink: /
 ---
 
-# Last login: Fri Apr 23 12:34:56 on ttys000
-⇒  ~ 
+# Last login: Fri Apr 23 10:34:00 on ttys000
+⇒  ~ ll
 
