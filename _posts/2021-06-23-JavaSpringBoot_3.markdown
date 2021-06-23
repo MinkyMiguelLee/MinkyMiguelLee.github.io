@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java SpringBoot(2) - View 환경설정"
+title:  "Java SpringBoot(3) - 프로젝트 빌드와 실행"
 date:   2021-06-23 10:00:00 +0100
 categories:
 ---
