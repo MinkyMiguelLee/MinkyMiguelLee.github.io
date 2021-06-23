@@ -5,7 +5,7 @@ date:   2021-06-23 10:00:00 +0100
 categories:
 ---
 
-# Java SpringBoot(2) - View 환경설정
+# Java SpringBoot(2) - View 환경설정 & template engine
 &nbsp;
 &nbsp;
 • **1. Welcome Page**
