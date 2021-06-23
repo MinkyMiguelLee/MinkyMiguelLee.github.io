@@ -8,10 +8,10 @@ categories:
 # Java SpringBoot(1) - 프로젝트 생성
 &nbsp;
 &nbsp;
-1. **SpringBoot Starter 사이트에서 스프링 프로젝트 생성**
+• **1. SpringBoot Starter 사이트에서 스프링 프로젝트 생성**
 [SpringBoot 스타터 페이지](https://start.spring.io/)
 
-2. **프로젝트 생성**
+• **2. 프로젝트 생성**
 
 • **프로젝트 선택**
     - Project : Gradle Project
@@ -28,7 +28,7 @@ categories:
     - Spring Web, Thymeleaf(Template Engine)
     - Gardle 이나 Maven과 같은 Build Tool은 의존관계를 자동으로 관리해 준다. 특정 라이브러리를 가져왔을 때, 해당 라이브러리와 의존관계를 가지는 라이브러리를 자동으로 가져온다.
 
-1. **생성된 프로젝트를 IntelliJ에서 Import**
+• **3. 생성된 프로젝트를 IntelliJ에서 Import**
 
 &nbsp;
 &nbsp;
