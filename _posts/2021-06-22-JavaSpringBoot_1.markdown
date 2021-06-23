@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Java SpringBoot(1)"
+title:  "Java SpringBoot(1) - 프로젝트 생성"
 date:   2021-06-22 15:00:00 +0100
 categories:
 ---
