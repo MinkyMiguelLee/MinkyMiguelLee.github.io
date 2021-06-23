@@ -13,18 +13,18 @@ categories:
 
 2. **프로젝트 생성**
 
-  • **프로젝트 선택**
+• **프로젝트 선택**
     - Project : Gradle Project
     - Spring Boot : 2.3.x
     - Language : Java
     - Packaging : Jar
     - Java : 11
 
-  • **프로젝트 메타데이터**
+• **프로젝트 메타데이터**
     - Group
     - Artifact - Build 되어 나온 결과물...즉 프로젝트 명
 
-  • **Dependencies**
+• **Dependencies**
     - Spring Web, Thymeleaf(Template Engine)
 
 3. **생성된 프로젝트를 IntelliJ에서 Import**
@@ -32,6 +32,3 @@ categories:
 &nbsp;
 &nbsp;
 ![SpringBootFileStructure](../../../../assets/images/SpringBoot_Structure.png)
-
-&nbsp;
-
