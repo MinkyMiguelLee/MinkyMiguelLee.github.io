@@ -38,5 +38,5 @@ categories:
 ![SpringBoot Template structure](../../../../assets/images/template_structure.png)
 - 컨트롤러에서 리턴 값으로 문자를 반환하면, 뷰 리졸버(viewResolver)가 화면을 template에서 찾아 처리한다.
 - 스프링 부트 템플릿엔진 기본 viewName 매핑 ->
-    'resources:templates/'+{viewName}+'.html'
+'resources:templates/'+{viewName}+'.html'
 
