@@ -5,7 +5,7 @@ date:   2021-06-23 10:00:00 +0100
 categories:
 ---
 
-# Java SpringBoot(4) - MVC와 Template engine
+# Java SpringBoot(5) - MVC와 Template engine
 &nbsp;
 &nbsp;
 • **1. 정적 컨텐츠**
