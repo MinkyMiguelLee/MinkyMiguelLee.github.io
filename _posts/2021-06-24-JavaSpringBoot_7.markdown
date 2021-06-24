@@ -45,7 +45,7 @@ categories:
 ```
 &nbsp;
 &nbsp;
-• **2. 회원관리 repository 코드**
+• **3. 회원관리 repository 코드**
 ```
   // Interface - MemberRepository
   package com.miguel.hellospring.repository;
@@ -104,7 +104,7 @@ categories:
 ```
 &nbsp;
 &nbsp;
-• **2. 회원관리 repository - Test 코드**
+• **4. 회원관리 repository - Test 코드**
 
 ```
   package com.miguel.hellospring.repository;
