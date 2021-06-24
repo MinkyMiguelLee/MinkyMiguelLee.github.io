@@ -63,3 +63,4 @@ categories:
 • **3. 단축키**
 - Command + Option + v : 자동으로 리턴할 변수를 만들어줌
 - Ctrl + t : 리팩토링과 관련된 기능들을 사용할 수 있음. (ex. 어떤 기능을 메서드로 extract...)
+- Command + shift + t : 새로운 테스트코드 생성
