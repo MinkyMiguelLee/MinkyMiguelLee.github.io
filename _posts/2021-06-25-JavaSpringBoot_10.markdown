@@ -70,6 +70,7 @@ categories:
 - *@Component* 를 포함하는 @Repository, @Service, @Controller도 자동 등록된다.
 - 기본적으로, 메인 코드가 위치한 경로로부터 하위 경로들은 스프링이 모두 뒤져서 자동으로 Spring Bean으로 등록하지만,
 - 하지만, 동일한 높이이거나 메인 코드보다 상위 경로는 스캔하지 않는다.
+
 &nbsp;
 &nbsp;
 ![SpringBoot Spring Bean - Component Scan](../../../../assets/images/springBean.png)
