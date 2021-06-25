@@ -109,3 +109,33 @@ categories:
 > *다양한 케이스를 고려하는 경우를 줄이고, 변수 사용과 개발에 더욱이 집중할 수 있게 해줍니다.*
 
 &nbsp;
+&nbsp;
+• **4. 변경된 MemberService 코드**
+&nbsp;
+```
+  package com.miguel.hellospring.service;
+
+  import com.miguel.hellospring.domain.Member;
+  import com.miguel.hellospring.repository.MemberRepository;
+  import com.miguel.hellospring.repository.MemoryMemberRepository;
+
+  import java.util.List;
+  import java.util.Optional;
+
+  public class MemberService {
+
+      private final MemberRepository memberRepository;
+
+      /*
+          private final MemberRepository memberRepository = new MemoryMemberRepository();
+          형식으로 새로 만들어줬던 repository를 아래의 constructor 방식으로 외부에서 Argument로 전달하도록
+          변경함. 이러면 하나의 Repository를 공유할 수 있음
+      */
+      public MemberService(MemberRepository memberRepository) {
+          this.memberRepository = memberRepository; //
+      }
+  .
+  .
+  .
+  }
+```
