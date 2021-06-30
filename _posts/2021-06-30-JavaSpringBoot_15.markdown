@@ -10,7 +10,7 @@ categories:
 &nbsp;
 • **1. JDBC 환경 설정**
 &nbsp;
-**build.gradle 파일에 jdbc, h2 DB 관련 라이브러리 추가**
+• **build.gradle 파일에 jdbc, h2 DB 관련 라이브러리 추가**
 ```
   plugins {
 	id 'org.springframework.boot' version '2.5.1'
@@ -42,7 +42,8 @@ categories:
 
 ```
 &nbsp;
-**스프링 부트 데이터베이스 연결 설정 추가**
+&nbsp;
+• **스프링 부트 데이터베이스 연결 설정 추가**
 ```
   // /resources/application.properties
   spring.datasource.url=jdbc:h2:tcp://localhost/~/test
@@ -50,10 +51,11 @@ categories:
   spring.datasource.username=sa
 ```
 &nbsp;
-**JDBC Repository 구현(생략)**
 &nbsp;
-**스프링 설정 변경**
+• **JDBC Repository 구현(생략)**
 &nbsp;
+&nbsp;
+• **스프링 설정 변경**
 ```
   // /main/java/com.miguel.hellospring/SpringConfig
   
