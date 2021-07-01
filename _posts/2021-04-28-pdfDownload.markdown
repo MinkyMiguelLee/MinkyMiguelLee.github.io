@@ -19,7 +19,6 @@ categories:
 &nbsp;
 &nbsp;
 ```
-
 // backend -> utilTestController.js
 module.exports.printPDF = async (req, res) => {
   const params = req.body;
@@ -37,7 +36,6 @@ module.exports.printPDF = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-
 ```
 &nbsp;
 &nbsp;
@@ -45,7 +43,6 @@ module.exports.printPDF = async (req, res) => {
 &nbsp;
 &nbsp;
 ```
-
 // frontend -> ViewSpecificModal.js
 const getPDF = () => {
   const config = {
@@ -70,7 +67,6 @@ const downloadPdf = () => {
   })
   .catch(err => console.log('123'))
 }
-
 ```
 &nbsp;
 &nbsp;
@@ -83,7 +79,6 @@ await page.goto('https://google.com', { waitUntil: 'networkidle0' });
 &nbsp;
 &nbsp;
 ```
-
 // frontend -> App.js
 import PageTop from './components/PageTop';
 import Pdf from './components/Pdf';
@@ -107,7 +102,6 @@ function App() {
 }
 
 export default App;
-
 ```
 &nbsp;
 &nbsp;
@@ -118,7 +112,6 @@ export default App;
 &nbsp;
 &nbsp;
 ```
-
 // frontend -> Pdf.js
 const Pdf = () => {
   const [tmpInnerHtml, setTmpInnerHtml] = useState('');
@@ -148,7 +141,6 @@ const Pdf = () => {
     </div> 
   );
 };
-
 ```
 &nbsp;
 &nbsp;

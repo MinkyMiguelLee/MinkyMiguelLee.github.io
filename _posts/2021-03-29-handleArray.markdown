@@ -11,7 +11,6 @@ categories: "study"
   기존의 배열이나 객체를 수정할 때에는 값을 할당하지 말고 새 객체를 만들어 값을 주입하는 방식으로
   사용해야 한다. 배열의 경우,
 ```
-
   this.setState({
     /*
       information이라는 배열에 data를 추가하고 싶을 경우
@@ -20,13 +19,11 @@ categories: "study"
     */ 
     information(배열명): this.state.information.concat(data),
   })
-
 ```
 &nbsp;
 &nbsp;
 • **비구조 할당** 문법을 사용하면, 코드를 간결하게 작성하는 데 도움이 된다.
 ```
-
   state = {
     information: [],
   }
@@ -55,18 +52,15 @@ categories: "study"
       // information(배열명): this.state.information.concat(data),
     })
   }
-
 ```
 &nbsp;
 &nbsp;
 • **defaultProps**를 통해 props의 초기 값을 선언할 수 있다.
 ```
-
   // defaultProps 를 사용할 때에는 static으로 선언해야 한다.
   static defaultProps = {
     data: []
   }
-
 ```
 &nbsp;
 &nbsp;
@@ -77,7 +71,6 @@ categories: "study"
 • key는 고유한 값이여야 한다.
 • shouldComponentUpdate 함수를 사용하여 불필요한 렌더링을 수행하지 않을 수 있다.
 ```
-
   shouldComponentUpdate(nextProps, nextState) {
     // state값이 이전과 달라지면, 새로 렌더링한다.
     if(this.state !== nextState){
@@ -86,7 +79,6 @@ categories: "study"
     // props의 info값이 이전과 달라지면, 새로 렌더링한다.
     return this.props.info !== nextProps.info;
   }
-
 ```
 
 
