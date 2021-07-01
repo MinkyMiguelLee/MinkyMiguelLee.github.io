@@ -12,7 +12,7 @@ categories:
 &nbsp;
 **스프링 컨테이너와 DB까지 연결한 통합 테스트 진행**
 ```
------------------------------------------------------------------------
+
   package com.miguel.hellospring.service;
 
   import com.miguel.hellospring.domain.Member;
@@ -67,7 +67,7 @@ categories:
           assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다");
       }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;

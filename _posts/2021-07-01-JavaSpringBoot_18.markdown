@@ -21,7 +21,7 @@ categories:
 &nbsp;
 • **build.gradle 파일에 JPA, H2 관련 라이브러리 추가**
 ```
------------------------------------------------------------------------
+
   dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -32,7 +32,7 @@ categories:
       exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 - spring-boot-starter-data-jpa 는 내부에 jdbc 관련 라이브러리를 포함한다. 따라서 jdbc는 제거해도 된다.
@@ -41,7 +41,7 @@ categories:
 &nbsp;
 • **스프링 부트에 JPA 설정 추가**
 ```
------------------------------------------------------------------------
+
   // /resources/application.properties
   spring.datasource.url=jdbc:h2:tcp://localhost/~/test
   spring.datasource.driver-class-name=org.h2.Driver
@@ -49,7 +49,7 @@ categories:
 
   spring.jpa.show-sql=true
   spring.jpa.hibernate.ddl-auto=none
------------------------------------------------------------------------
+
 ```
 &nbsp;
 - show-sql : JPA가 생성하는 SQL을 출력한다.
@@ -60,7 +60,7 @@ categories:
 &nbsp;
 • **JPA Entity Mapping**
 ```
------------------------------------------------------------------------
+
   // /domain/Member
 
   package com.miguel.hellospring.domain;
@@ -94,13 +94,13 @@ categories:
           this.name = name;
       }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **3. JPA 회원 Repository**
 ```
------------------------------------------------------------------------
+
   // /repository/JpaMemberRepository
 
   package com.miguel.hellospring.repository;
@@ -149,13 +149,13 @@ categories:
           return result;
       }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **4. 서비스 계층에 Transaction 추가**
 ```
------------------------------------------------------------------------
+
   // /service/MemberService
   
   .
@@ -168,7 +168,7 @@ categories:
   .
   .
   .
------------------------------------------------------------------------
+
 ```
 &nbsp;
 - 스프링은 해당 클래스의 메서드를 실행할 때 트랜잭션을 시작하고, 메서드가 정상 종료되면 트랜잭션을 커밋한다. 만약 런타임 예외가 발생하면 롤백한다.
@@ -178,7 +178,7 @@ categories:
 &nbsp;
 • **5. JPA를 사용하도록 스프링 설정 변경**
 ```
------------------------------------------------------------------------
+
   // SpringConfig
 
   .
@@ -206,7 +206,7 @@ categories:
           return new JpaMemberRepository(em);
       }
   }
------------------------------------------------------------------------
+
 ```
 
 

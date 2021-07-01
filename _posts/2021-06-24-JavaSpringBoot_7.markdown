@@ -17,7 +17,7 @@ categories:
 &nbsp;
 • **2. 회원관리 도메인 코드**
 ```
------------------------------------------------------------------------
+
   // /domain/Member
   package com.miguel.hellospring.domain;
 
@@ -42,13 +42,13 @@ categories:
           this.name = name;
       }
 }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **3. 회원관리 repository 코드**
 ```
------------------------------------------------------------------------
+
   // Interface - MemberRepository
   package com.miguel.hellospring.repository;
 
@@ -64,11 +64,11 @@ categories:
       List<Member> findAll();
 
   } 
------------------------------------------------------------------------
+
 ```
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // class - MemoryMemberRepository
   package com.miguel.hellospring.repository;
 
@@ -103,14 +103,14 @@ categories:
           return new ArrayList<>(store.values());
       }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **4. 회원관리 repository - Test 코드**
 
 ```
------------------------------------------------------------------------
+
   package com.miguel.hellospring.repository;
 
   import com.miguel.hellospring.domain.Member;
@@ -176,5 +176,5 @@ categories:
           assertThat(result.size()).isEqualTo(2);
       }
   }
------------------------------------------------------------------------
+
 ```

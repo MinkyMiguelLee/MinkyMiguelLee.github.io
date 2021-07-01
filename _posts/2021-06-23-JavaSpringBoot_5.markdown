@@ -21,7 +21,7 @@ categories:
 &nbsp;
 • **컨트롤러 예시**
 ```
------------------------------------------------------------------------
+
   package com.miguel.hellospring.controller;
 
   import org.springframework.stereotype.Controller;
@@ -39,13 +39,13 @@ categories:
           return "hello-template";
       }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **템플릿 예시**
 ```
------------------------------------------------------------------------
+
   // hello-template.html
   <!DOCTYPE html>
   <html xmlns:th="http://www.thymeleaf.org">
@@ -57,7 +57,7 @@ categories:
     <p th:text="'안녕하세요. ' + ${name}">안녕하세요. 손님.</p>
   </body>
   </html>
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;

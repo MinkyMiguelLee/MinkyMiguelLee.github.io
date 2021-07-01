@@ -11,7 +11,7 @@ categories:
 • **1. MemberController 코드**
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // /src/java/hello.hellospring/controller/MemberController
   .
   .
@@ -41,14 +41,14 @@ categories:
           return "redirect:/";
       }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **2. memberList.html 코드**
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // /src/main/resources/templates/members/memberList.html
   <!DOCTYPE HTML>
   <html xmlns:th="http://www.thymeleaf.org">
@@ -73,7 +73,7 @@ categories:
   </div> <!-- /container -->
   </body>
   </html>
------------------------------------------------------------------------
+
 ```
 &nbsp;
 - thymeleaf 문법을 통해 members list의 값을 each로 loop 돈다. 

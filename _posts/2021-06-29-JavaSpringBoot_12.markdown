@@ -11,7 +11,7 @@ categories:
 • **1. HomeController 코드**
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // /src/java/hello.hellospring/controller/HomeController
   package com.miguel.hellospring.controller;
 
@@ -27,14 +27,14 @@ categories:
       }
 
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **2. home.html 코드**
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // /src/main/resources/templates/home.html
   <!DOCTYPE HTML>
   <html xmlns:th="http://www.thymeleaf.org">
@@ -51,7 +51,7 @@ categories:
       </div>
   </body>
   </html>
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;

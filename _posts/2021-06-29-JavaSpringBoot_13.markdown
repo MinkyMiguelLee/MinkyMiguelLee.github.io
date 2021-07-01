@@ -11,7 +11,7 @@ categories:
 • **1. MemberController 코드**
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // /src/java/hello.hellospring/controller/MemberController
   .
   .
@@ -41,14 +41,14 @@ categories:
           return "redirect:/"; // 완료후 홈 화면으로 redirect
       }
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **2. MemberForm 코드**
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // /src/java/hello.hellospring/controller/MemberForm
   package com.miguel.hellospring.controller;
 
@@ -64,14 +64,14 @@ categories:
       }
 
   }
------------------------------------------------------------------------
+
 ```
 &nbsp;
 &nbsp;
 • **3. createMemberForm.html 코드**
 &nbsp;
 ```
------------------------------------------------------------------------
+
   // /src/main/resources/templates/members/createMemberForm.html
   <!DOCTYPE HTML>
   <html xmlns:th="http://www.thymeleaf.org">
@@ -87,5 +87,5 @@ categories:
   </div> <!-- /container -->
   </body>
   </html>
------------------------------------------------------------------------
+
 ```
