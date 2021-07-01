@@ -11,6 +11,7 @@ categories:
 • **1. Controller 코드**
 &nbsp;
 ```
+-----------------------------------------------------------------------
   package com.miguel.hellospring.controller;
 
   import com.miguel.hellospring.service.MemberService;
@@ -43,6 +44,7 @@ categories:
           this.memberService = memberService;
       }
   }
+-----------------------------------------------------------------------
 ```
 &nbsp;
 &nbsp;

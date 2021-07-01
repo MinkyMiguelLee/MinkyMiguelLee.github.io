@@ -17,7 +17,7 @@ categories:
 &nbsp;
 • **2. MemberServiceTest 코드**
 ```
-
+-----------------------------------------------------------------------
   package com.miguel.hellospring.service;
 
   import com.miguel.hellospring.domain.Member;
@@ -88,7 +88,7 @@ categories:
       void findOne() {
       }
   }
-
+-----------------------------------------------------------------------
 ```
 &nbsp;
 &nbsp;
@@ -113,6 +113,7 @@ categories:
 • **4. 변경된 MemberService 코드**
 &nbsp;
 ```
+-----------------------------------------------------------------------
   package com.miguel.hellospring.service;
 
   import com.miguel.hellospring.domain.Member;
@@ -138,4 +139,5 @@ categories:
   .
   .
   }
+-----------------------------------------------------------------------
 ```

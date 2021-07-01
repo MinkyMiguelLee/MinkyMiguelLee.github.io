@@ -16,6 +16,7 @@ categories:
 &nbsp;
 • **2. Service 코드**
 ```
+-----------------------------------------------------------------------
   // /service/MemberService
   package com.miguel.hellospring.service;
 
@@ -56,7 +57,7 @@ categories:
       }
 
   }
-
+-----------------------------------------------------------------------
 ```
 &nbsp;
 &nbsp;

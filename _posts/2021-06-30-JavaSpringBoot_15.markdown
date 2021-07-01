@@ -12,6 +12,7 @@ categories:
 &nbsp;
 • **build.gradle 파일에 jdbc, h2 DB 관련 라이브러리 추가**
 ```
+-----------------------------------------------------------------------
   plugins {
 	id 'org.springframework.boot' version '2.5.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -39,16 +40,18 @@ categories:
   test {
     useJUnitPlatform()
   }
-
+-----------------------------------------------------------------------
 ```
 &nbsp;
 &nbsp;
 • **스프링 부트 데이터베이스 연결 설정 추가**
 ```
+-----------------------------------------------------------------------
   // /resources/application.properties
   spring.datasource.url=jdbc:h2:tcp://localhost/~/test
   spring.datasource.driver-class-name=org.h2.Driver
   spring.datasource.username=sa
+-----------------------------------------------------------------------
 ```
 &nbsp;
 &nbsp;
@@ -57,6 +60,7 @@ categories:
 &nbsp;
 • **스프링 설정 변경**
 ```
+-----------------------------------------------------------------------
   // /main/java/com.miguel.hellospring/SpringConfig
   
   .
@@ -88,6 +92,7 @@ categories:
           // 했을 뿐인데, 정상적으로 H1 DB 사용이 가능하다.
       }
   }
+-----------------------------------------------------------------------
 ```
 &nbsp;
 - DataSource는 데이터베이스 커넥션을 획득할 때 사용하는 객체다. 스프링 부트는 데이터베이스 커넥션 정보를 바탕으로 DataSource를 생성하고 스프링 빈으로 만들어둔다. 그래서 DI를 받을 수 있다.

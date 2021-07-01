@@ -18,6 +18,7 @@ categories:
 • **2. Spring Jdbc Template 코드**
 &nbsp;
 ```
+-----------------------------------------------------------------------
   package com.miguel.hellospring.repository;
 
   import com.miguel.hellospring.domain.Member;
@@ -82,4 +83,5 @@ categories:
           };
       }
   }
+-----------------------------------------------------------------------
 ```

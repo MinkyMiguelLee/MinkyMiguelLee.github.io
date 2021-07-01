@@ -11,7 +11,7 @@ categories:
 • **1. SpringConfig 코드**
 &nbsp;
 ```
-
+-----------------------------------------------------------------------
   package com.miguel.hellospring;
 
   import com.miguel.hellospring.repository.MemberRepository;
@@ -38,7 +38,7 @@ categories:
       }
       
   }
-
+-----------------------------------------------------------------------
 ```
 &nbsp;
 &nbsp;
