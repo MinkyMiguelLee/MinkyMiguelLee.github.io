@@ -65,7 +65,7 @@ categories:
 ```
 &nbsp;
 &nbsp;
-• **. AOP 사용시 프로젝트 구조**
+• **4. AOP 사용시 프로젝트 구조**
 &nbsp;
 ![Aop Proxy](../../../../assets/images/AopProxy.png)
 &nbsp;
