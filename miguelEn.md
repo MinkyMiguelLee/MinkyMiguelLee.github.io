@@ -49,8 +49,8 @@ permalink: /miguelEn
 　• **4-3. AR / VR application development**
 　　• Unity3D, C#, Vuforia, AR Foundation
 
-　• **4-4. Automate in-house system using Java SpringBoot**
-　　• Automate mass data DB backup systems using Java Spring Boot and Jenkins.
+　• **4-4. Automate in-house system using Java SpringBatch**
+　　• Automate mass data DB backup systems using Java SpringBatch and Jenkins.
 　　• Automatically upload large amounts of data (CLOB text of image files) loaded on an existing physical DB to AWS S3.
 　　• Java SpringBatch, Jenkins, AWS S3
 

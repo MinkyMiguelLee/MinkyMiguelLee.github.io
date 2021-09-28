@@ -51,8 +51,8 @@ permalink: /miguelKr
 　• **4-3. Unity, Vuforia, AR Foundation을 통한 AR/VR 애플리케이션 개발**
 　　• Unity3D, C#
 
-　• **4-4. Java SpringBoot 를 활용한 사내 시스템 자동화**
-　　• Java SpringBoot 와 Jenkins 를 활용한 대용량 DB 백업 시스템 자동화
+　• **4-4. Java SpringBatch 를 활용한 사내 시스템 자동화**
+　　• Java SpringBatch 와 Jenkins 를 활용한 대용량 DB 백업 시스템 자동화
 　　• 기존 물리 DB 에 적재중인 대용량 데이터(이미지 파일의 CLOB 텍스트)를 자동으로 AWS S3 에 업로드
 　　• Java SpringBatch, Jenkins, AWS S3
 
