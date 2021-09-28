@@ -19,7 +19,7 @@ permalink: /miguelKr
 
 
 ### 2. Technical Skills
-　• 언어: Javascript, C#(Unity3D 기반), C++
+　• 언어: Javascript, C#(Unity3D 기반), C++, Java SpringBatch
 　• 프론트엔드: HTML, CSS, jQuery, React.js
 　• OS: Linux(Ubuntu), Windows, Mac OS
 　• 데이터베이스: MongoDB, MySQL
@@ -51,7 +51,12 @@ permalink: /miguelKr
 　• **4-3. Unity, Vuforia, AR Foundation을 통한 AR/VR 애플리케이션 개발**
 　　• Unity3D, C#
 
-　• **4-4. RPA 프로세스 개발/운영**
+　• **4-4. Java SpringBoot 를 활용한 사내 시스템 자동화**
+　　• Java SpringBoot 와 Jenkins 를 활용한 대용량 DB 백업 시스템 자동화
+　　• 기존 물리 DB 에 적재중인 대용량 데이터(이미지 파일의 CLOB 텍스트)를 자동으로 AWS S3 에 업로드
+　　• Java SpringBatch, Jenkins, AWS S3
+
+　• **4-5. RPA 프로세스 개발/운영**
 　　• WinAutomation, Process Robot, UIPath, Akabot
 
 ###### Vrism (2018.07~2018.09)

@@ -49,7 +49,12 @@ permalink: /miguelEn
 　• **4-3. AR / VR application development**
 　　• Unity3D, C#, Vuforia, AR Foundation
 
-　• **4-4. RPA process development / operation**
+　• **4-4. Automate in-house system using Java SpringBoot**
+　　• Automate mass data DB backup systems using Java Spring Boot and Jenkins.
+　　• Automatically upload large amounts of data (CLOB text of image files) loaded on an existing physical DB to AWS S3.
+　　• Java SpringBatch, Jenkins, AWS S3
+
+　• **4-5. RPA process development / operation**
  　• WinAutomation, Process Robot, UIPath, Akabot
 
 ###### Vrism (2018.07~2018.09)
