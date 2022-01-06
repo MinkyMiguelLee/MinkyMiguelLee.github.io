@@ -56,14 +56,28 @@ permalink: /miguelKr
 　　• 기존 물리 DB 에 적재중인 대용량 데이터(이미지 파일의 CLOB 텍스트)를 자동으로 AWS S3 에 업로드
 　　• Java SpringBatch, Jenkins, AWS S3
 
-　• **4-5. RPA 프로세스 개발/운영**
+　• **4-5. 진정방송봇(웹 서비스)**
+　　• 속기사가 작성한 실시간 방송의 자막 데이터를 기반으로 TA를 통한 준 실시간 방송 심의 시스템 제공
+　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / SwaggerAPI / 
+　　　TA
+
+　• **4-6. 심의포탈(웹 서비스)**
+　　• 다양한 사내 심의 관련 정보의 조회 / 검색 및 심의 위반 사항 등을 확인할 수 있는 웹 서비스
+　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / React.js / 
+　　　OAS / SwaggerAPI
+
+　• **4-7. 기간계 디자인 시스템(GUI-Core)**
+　　• Material-UI 기반의 사내 디자인 시스템 개발 / 운영
+　　• React.js / StoryBook / TypeScript
+
+　• **4-8. RPA 프로세스 개발/운영**
 　　• WinAutomation, Process Robot, UIPath, Akabot
 
 ###### Vrism (2018.07~2018.09)
-　• **4-5. Unity3D / Vuforia를 통한 AR 애플리케이션 개발**
+　• **4-9. Unity3D / Vuforia를 통한 AR 애플리케이션 개발**
 
-　• **4-6. 골든구스 디럭스 브랜드 - 2018 쇼케이스**
+　• **4-10. 골든구스 디럭스 브랜드 - 2018 쇼케이스**
 　　• 투명 디스플레이 애플리케이션 개발(Product Showcase - Unity3D / C#)
 
-　• **4-7. 어딕션 - 키오스크 어플리케이션**
+　• **4-11. 어딕션 - 키오스크 어플리케이션**
 　　• 미니 게임 / 제품 쇼케이스 - 2018 쇼케이스용 유니티3D / C# 개발

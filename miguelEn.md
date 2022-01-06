@@ -54,17 +54,33 @@ permalink: /miguelEn
 　　• Automatically upload large amounts of data (CLOB text of image files) loaded on an existing physical DB to AWS S3.
 　　• Java SpringBatch, Jenkins, AWS S3
 
-　• **4-5. RPA process development / operation**
+　• **4-5. Broadcast-bot(web service)**
+　　• Semi-realtime broadcast caption Review system.
+　　• detect problematic keywords from caption data (TA).
+　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / SwaggerAPI / 
+　　　TA
+
+　• **4-6. Review Portal(web service)**
+　　• Web service that can check various information related to
+　　　in-house deliberation and violations of deliberation
+　　• node.js / Express.js / CSS / MongoDB / AWS EC2 / React.js / 
+　　　OAS / SwaggerAPI
+
+　• **4-7. In-house Design system(GUI-Core)**
+　　• Development and operation of an in-house design system based on Material-UI.
+　　• React.js / StoryBook / TypeScript
+
+　• **4-8. RPA process development / operation**
  　• WinAutomation, Process Robot, UIPath, Akabot
 
 ###### Vrism (2018.07~2018.09)
-　• **4-5. AR application development**
+　• **4-9. AR application development**
 　　• Unity3D / Vuforia
 
-　• **4-6. Golden Goose Deluxe Brand**
+　• **4-10. Golden Goose Deluxe Brand**
 　　• transparent display application Development for Promotion 2018
 　　• Product Showcase - Developed with Unity3D / C#
 
-　• **4-7. Addiction - Kiosk application**
+　• **4-11. Addiction - Kiosk application**
 　　• Mini Game / Product Showcase
 　　• Developed with Unity3D / C# development for showcase 2018
