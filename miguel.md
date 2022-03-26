@@ -7,7 +7,7 @@ permalink: /miguelKr
 ![miguel](../assets/images/migProfile.png)
 &nbsp;
 # Minki Lee 이민기 李玟基 Miguel
-
+&nbsp;
 [상세 Resume 페이지(Notion)](https://ml0000.notion.site/Miguel-ddf8fa237271407fb89eefad95bdfe3e)
 
 ## 1. 개요
