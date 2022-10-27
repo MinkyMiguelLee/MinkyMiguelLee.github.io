@@ -2,7 +2,7 @@
 layout: post
 title: "mongodb - replica set 구성 실패시 재구성"
 date: 2022-10-21 15:50:00 +0100
-categories: "work"
+categories: 
 ---
 
 # mongodb - replica set 구성 실패시 재구성
