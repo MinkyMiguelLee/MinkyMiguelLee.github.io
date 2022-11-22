@@ -37,3 +37,4 @@ npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')
 ```
 
 위의 명령어를 통해 gcc / g++ 를 설치한 후 정상적으로 postinstall script가 실행되는 것을 확인하였다.
+
