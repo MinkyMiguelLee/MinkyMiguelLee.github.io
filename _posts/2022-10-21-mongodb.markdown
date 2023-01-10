@@ -2,10 +2,10 @@
 layout: post
 title: "mongodb - replica set 구성 실패시 재구성"
 date: 2022-10-21 15:50:00 +0100
-categories: 
+categories:
 ---
 
-# mongodb - replica set 구성 실패시 재구성
+# mongodb - replica set 구성 실패시 재구성
 
 &nbsp;
 MongoDB 이전 설치 중 replica set 이슈로 인해 다시 replica set을 설정해야 하는 상황이 되었다.

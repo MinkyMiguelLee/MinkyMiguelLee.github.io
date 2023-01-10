@@ -5,7 +5,7 @@ date: 2022-12-06 13:46:00 +0100
 categories:
 ---
 
-# VS Code - javascript Debugger
+# VS Code - javascript Debugger
 
 &nbsp;
 

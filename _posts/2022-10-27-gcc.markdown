@@ -5,7 +5,7 @@ date: 2022-10-27 17:54:00 +0100
 categories:
 ---
 
-# npm - failed at postinstall 에러 발생시
+# npm - failed at postinstall 에러 발생시
 
 &nbsp;
 
@@ -37,4 +37,3 @@ npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')
 ```
 
 위의 명령어를 통해 gcc / g++ 를 설치한 후 정상적으로 postinstall script가 실행되는 것을 확인하였다.
-
