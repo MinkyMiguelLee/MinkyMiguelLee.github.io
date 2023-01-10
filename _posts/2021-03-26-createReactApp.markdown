@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "react 개발 tips"
-date:   2021-03-29 11:31:00 +0100
+title: "React 개발 tips"
+date: 2021-03-29 11:31:00 +0100
 categories: "study"
 ---
 
 # react 개발 tips
+
 &nbsp;
 visual studio code(VSCode) 에서 확장 프로그램 'Reactjs code snippets'를 설치하면, react 개발 생산성을 상당히 높일 수 있다.
 
@@ -21,6 +22,3 @@ visual studio code(VSCode) 에서 확장 프로그램 'Reactjs code snippets'를
 위의 경우와 같이 reactJS에서 사용되는 다양한 메소드, 클래스 등을 단축키를 통해 생성할 수 있다.
 
 [reactJS code snippets - 단축키 목록](https://marketplace.visualstudio.com/items?itemName=xabikos.ReactSnippets)
-
-
-
