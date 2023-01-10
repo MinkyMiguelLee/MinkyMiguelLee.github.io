@@ -20,17 +20,17 @@ javascript debugger 사용 방법에 대해 정리한다.
   // launch.json
 
   {
-    "configurations": [
-      {
-        "type": "chrome",
-        "request": "launch",
-        "name": "chrome debugger",
-        "url": "http://localhost:3000",
-        "webRoot": "${workspaceFolder}",
-        "sourceMaps": true,
-        "trace": true
-      }
-    ]
+      "configurations": [
+          {
+              "type": "chrome",
+              "request": "launch",
+              "name": "chrome debugger",
+              "url": "http://localhost:3000",
+              "webRoot": "${workspaceFolder}",
+              "sourceMaps": true,
+              "trace": true
+          }
+      ]
   }
 
 ```
@@ -43,15 +43,15 @@ javascript debugger 사용 방법에 대해 정리한다.
   // compilerOptions 항목의 sourceMap을 true로!
 
   {
-  	"compilerOptions": {
-      "sourceMap": true,
+      "compilerOptions": {
+          "sourceMap": true,
+          .
+          .
+          .
+      }
       .
       .
       .
-    }
-    .
-    .
-    .
   }
 
 ```
