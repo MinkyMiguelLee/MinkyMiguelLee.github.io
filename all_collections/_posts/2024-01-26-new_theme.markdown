@@ -1,0 +1,13 @@
+---
+layout: post
+title: "블로그 테마를 바꿨다"
+date: 2024-01-26 12:30:00 +0100
+categories: "thoughts"
+---
+
+개발 블로그에 최근 포스팅을 다시 올리면서, 테마를 한번 싹 갈아엎었다.
+[jekyll-theme-serial-programmer Public](https://github.com/sharadcodes/jekyll-theme-serial-programmer)
+
+위 테마를 기반으로, 폰트나 포인트 컬러, 아이콘 등을 입맛에 맞게 약간 수정했다.
+
+앞으로도 가끔 들어와서 기억해야 할 내용들을 정리해야지.
