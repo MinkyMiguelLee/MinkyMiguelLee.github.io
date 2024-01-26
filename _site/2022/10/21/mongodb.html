@@ -1,0 +1,102 @@
+<h1 id="mongodb---replica-set-구성-실패시-재구성">mongodb - replica set 구성 실패시 재구성</h1>
+
+<p> 
+MongoDB 이전 설치 중 replica set 이슈로 인해 다시 replica set을 설정해야 하는 상황이 되었다.
+MongoDB는 레플리카 셋으로 설정시 구성 서버 중 하나의 서버가 priority를 기반으로 자체적으로 Primary를 설정한다.
+이 때, 세 개의 서버가 모두 스스로를 Secondary로 인식하는 이슈가 발생하였다.</p>
+
+<p>많은 삽질을 거쳐 찾아낸 replica set initiation의 rollback 방법을 정리해 둔다.</p>
+
+<p>초기 설정의 경우, 존경하는 K의 블로그를 참고하였다.
+<a href="https://lahuman.jabsiri.co.kr/339">MongoDB 설치</a></p>
+
+<p>• 1. /etc/mongod.conf 또는 mongod 실행 시 사용할 .conf 파일에 replication 옵션을 주석처리한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  // mongod.conf 예시
+  systemLog:
+    destination: file
+    path: "/applications/mongodb/log/mongod.log"
+    logAppend: true
+    logRotate: rename
+  storage:
+    engine: wiredTiger
+    directoryPerDB: true
+    wiredTiger:
+        engineConfig:
+          journalCompressor: snappy
+        collectionConfig:
+          blockCompressor: snappy
+        indexConfig:
+          prefixCompression: true
+    dbPath: "/applications/mongodb/data"
+    journal:
+        enabled: true
+        commitIntervalMs: 300
+  processManagement:
+    fork: true
+    pidFilePath: "/tmp/mongod.pid"
+  net:
+    port: 27019
+    bindIpAll: true
+    maxIncomingConnections: 20000
+    unixDomainSocket:
+        enabled: false
+  replication: // 이 부분을 주석처리한다
+      oplogSizeMB: 10240
+      replSetName: "scrumBy51"
+  security:
+      authorization: disabled
+      keyFile: /applications/mongodb/51-mongodb.key
+
+</code></pre></div></div>
+
+<p>• 2. service로 띄운 mongod을 재시작한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  service mongod restart
+
+</code></pre></div></div>
+
+<p>service 명령어가 아닌</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  mongod -f /applications/mongodb/config/mongod.conf
+
+</code></pre></div></div>
+
+<p>등의 명령어로 실행시킨 경우</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  ps -ef | grep mongo
+
+</code></pre></div></div>
+
+<p>명령어를 통해 mongod이 실행중인 포트를 찾아</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  kill -9 포트번호
+
+</code></pre></div></div>
+
+<p>를 사용하여 포트를 죽이고, 재실행한다.</p>
+
+<p>• 3. Primary로 설정할 서버에서, rs.init()을 통해 다시 설정한다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  // 예시
+  rs.initiate({
+    _id: "scrumBy51", // .conf 파일에서 설정한 replica set 이름      
+    version: 1,      
+    members: [
+      { _id: 0, host : "10.70.152.40:27019"},
+      { _id: 1, host : "10.70.152.77:27019"},
+      { _id: 2, host : "10.70.152.59:27019"},
+    ]   
+  })
+
+</code></pre></div></div>
+
+<p>• 4. 실행이 완료되었으면, .conf 파일의 replication 옵션을 다시 활성화시킨다.</p>
+
+<p>• 5. 2번의 과정을 반복하여 재실행한다.</p>

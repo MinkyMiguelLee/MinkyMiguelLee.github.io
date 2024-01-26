@@ -1,0 +1,81 @@
+<h1 id="java-springboot13---회원-등록-기능-개발">Java SpringBoot(13) - 회원 등록 기능 개발</h1>
+<p> 
+ 
+• <strong>1. MemberController 코드</strong>
+ </p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  // /src/java/hello.hellospring/controller/MemberController
+  .
+  .
+  .
+
+  @Controller 
+  public class MemberController {
+
+      .
+      .
+      .
+
+      @GetMapping("/members/new") // home.html에 정의된 url.
+      public String createForm() {
+          return "members/createMemberForm"; // templates의 members/createMemberForm.html을 리턴한다.
+      }
+
+      // 회원 등록 페이지(/members/new)에서 등록 버튼을 눌렀을 때, post 방식으로 데이터를 넘겨주므로
+      // Mapping 역시 GetMapping이 아닌 PostMapping으로 정의해야 한다.
+      @PostMapping("/members/new") 
+      public String create(MemberForm form) { // MemberForm 객체를 넘겨받음
+          Member member = new Member(); // Member를 만듦
+          member.setName(form.getName()); // MemberForm을 통해 넘겨받은 이름을 getName으로 member 객체에 전달
+
+          memberService.join(member); // memberService에 새 멤버를 등록
+
+          return "redirect:/"; // 완료후 홈 화면으로 redirect
+      }
+  }
+
+</code></pre></div></div>
+<p> 
+ 
+• <strong>2. MemberForm 코드</strong>
+ </p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  // /src/java/hello.hellospring/controller/MemberForm
+  package com.miguel.hellospring.controller;
+
+  public class MemberForm {
+      private  String name;
+
+      public String getName() {
+          return name;
+      }
+
+      public void setName(String name) {
+          this.name = name;
+      }
+
+  }
+
+</code></pre></div></div>
+<p> 
+ 
+• <strong>3. createMemberForm.html 코드</strong>
+ </p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+  // /src/main/resources/templates/members/createMemberForm.html
+  &lt;!DOCTYPE HTML&gt;
+  &lt;html xmlns:th="http://www.thymeleaf.org"&gt;
+  &lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;form action="/members/new" method="post"&gt; // form을 submit할 때, post형식으로 /members/new 호출
+      &lt;div class="form-group"&gt;
+        &lt;label for="name"&gt;이름&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" placeholder="이름을 입력하세요"&gt;
+      &lt;/div&gt;
+      &lt;button type="submit"&gt;등록&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt; &lt;!-- /container --&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+
+</code></pre></div></div>

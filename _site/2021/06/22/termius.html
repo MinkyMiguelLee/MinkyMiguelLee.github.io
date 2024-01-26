@@ -1,0 +1,57 @@
+<h1 id="termius">Termius</h1>
+<p> 
+<img src="../../../../assets/images/Termius_main.png" alt="TermiusMain" />
+ 
+ 
+Termius 는 MacOS에서 간편하게 사용 가능한 SSH 클라이언트 어플리케이션이다.
+ 
+ 
+기존 AWS EC2 접근을 위해 터미널에서 커맨드를 사용해 SSH를 활용해 왔지만,
+얼마 전 윈도우 PC에서 한 선배가 MobaXterm을 활용하는 것을 보고 맥에서도 간편하게
+SSH 사용이 가능한 클라이언트 툴이 있으면 좋겠다는 생각을 하게 되어 검색을 통해 알게 된 Termius를 사용하게 되었다.
+ 
+ 
+내가 어떻게 Termius 를 활용하고 있는지 간략하게 설명해보자면,
+ 
+ </p>
+<ol>
+  <li>pem key 등록
+    <ul>
+      <li>화면 좌상단의 리스트 아이콘을 클릭하여 Preferences - Keychain 메뉴에 접근하여, 기존에 사용중이던 pem 파일을 등록한다.</li>
+    </ul>
+    <ul>
+      <li>new key 버튼 클릭 -&gt; label과 private key(기존에 사용중이던 pem 파일을 디렉토리에서 직접 선택할 수 있다.) 입력 후 저장</li>
+    </ul>
+  </li>
+  <li>Code Snippet 등록
+    <ul>
+      <li>화면 좌측 snippets 메뉴 -&gt; new 버튼을 통해 새로운 Snippet 등록</li>
+      <li>구분을 위한 Label과 기존에 SSH 접근을 위해 사용하던 커맨드 입력후 저장</li>
+      <li>Ex) ssh -i “123.pem” 123@1.23.45.678</li>
+    </ul>
+  </li>
+  <li>Host 등록
+    <ul>
+      <li>화면 좌측 Hosts 메뉴 -&gt; new host 버튼을 통해 새로운 host 등록</li>
+      <li>상단 블록에 구분을 위한 label과 public IP 주소 입력</li>
+      <li>하단 SSH/Mosh 블록에 유저명, key(1번에서 등록한 pem 키 선택), startup snippet(2번에서 등록한 snippet 선택) 입력 후 저장</li>
+    </ul>
+  </li>
+</ol>
+
+<p> 
+ 
+이 세 단계를 통해 등록한 Host를 더블클릭하면, 손쉽게 SSH 접근이 가능하다.
+ 
+ 
+정확한 이유는 모르겠지만, 내 경우에는 처음 EC2에 접근하면 무언가 실행중인지 Cmd + C 를 한 번 입력해 주어야 정상적으로
+커맨드 입력이 가능하다.
+ 
+ 
+EC2 터미널 내에서도, 기존에 등록한 Snippet을 사용해 손쉽게 다른 디렉토리 접근이나 특정 커맨드를 사용할 수 있다.
+터미널 화면에서 Cmd + S 단축키를 통해 Snippet 목록을 확인할 수 있다.
+ 
+ 
+<img src="../../../../assets/images/Termius_term.png" alt="TermiusTerm" />
+ 
+<a href="https://www.termius.com/">Termius 공식 홈페이지</a></p>

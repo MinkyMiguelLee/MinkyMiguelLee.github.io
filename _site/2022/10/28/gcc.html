@@ -1,0 +1,36 @@
+<h1 id="npm---failed-at-postinstall-에러-발생시">npm - failed at postinstall 에러 발생시</h1>
+
+<p> </p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')}catch(e){}"`
+
+</code></pre></div></div>
+
+<p>다른 원인이 있을 수도 있겠지만, 나의 경우에는 gcc / g++가 설치되지 않아 발생한 오류이다.</p>
+
+<p><strong>GCC란?</strong></p>
+
+<blockquote>
+  <p>GNU Compiler Collection 줄여서 GCC라 한다.
+원래는 C만 지원했던 까닭에 GNU C Compiler였는데,
+도중에 C++, Java, Fortran, Ada 등 여러 언어를 컴파일할 수 있게 되면서,
+현재의 이름으로 바뀌게 되었다.</p>
+</blockquote>
+
+<p><strong>podstinstall 이란?</strong></p>
+
+<blockquote>
+  <p>패키지의 종속성 트리 변경 사항이 디스크에 기록되면(예: 종속성 또는 전이적 종속성이 추가, 제거 또는 변경된 후) 호출되는 yarn lifecycle script</p>
+</blockquote>
+
+<blockquote>
+  <p>postinstall is called after a package’s dependency tree changes are written to the disk – e.g. after a dependency or transitive dependency is added, removed, or changed. It is guaranteed to be called in topological order (in other words, your dependencies’ postinstalls will always run before yours). For backwards compatibility, preinstall and install are called as part of postinstall.</p>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  // root 권한에서
+  yum -y install gcc
+  yum -y install gcc-c++
+
+</code></pre></div></div>
+
+<p>위의 명령어를 통해 gcc / g++ 를 설치한 후 정상적으로 postinstall script가 실행되는 것을 확인하였다.</p>
