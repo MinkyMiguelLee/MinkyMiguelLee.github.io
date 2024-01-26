@@ -19,7 +19,7 @@ categories: ["study", "javaScript"]
 
 하지만 콜백 패턴은 조금만 중첩되어도 코드가 복잡해지는 콜백 지옥(Callback Hell)을 만들어낸다.
 
-```
+```js
 function display(data) {
   console.log("result: " + data);
 }
@@ -44,25 +44,25 @@ getData(parsing);
 
 위 코드는 프로미스를 사용하면 아래와 같이 좀더 보기 쉽게 바꿀 수 있다.
 
-```
+```js
 const getData = new Promise((resolve, reject) => {
   data = "This is new Data";
   console.log(data);
   resolve(data);
-})
+});
 
 getData
-  .then(data => {
+  .then((data) => {
     // concatData
     parsedData = data.concat(" parsing");
     console.log(parsedData);
     return parsedData;
   })
-  .then(data => {
+  .then((data) => {
     // display
     console.log("result: " + data);
     return data;
-  })
+  });
 // This is new Data
 // This is new Data parsing
 // result: This is new Data parsing
@@ -88,12 +88,12 @@ getData
 
 ### 3.1. new 키워드로 생성
 
-```
+```js
 // 1. new 키워드로 생성
 const promise = new Promise((resolve, reject) => {
   // ..
   // resolve() or reject('error')
-})
+});
 ```
 
 `new` 키워드로 생성한 프로미스는 대기 중 상태가 된다.
@@ -112,22 +112,22 @@ const promise = new Promise((resolve, reject) => {
 
 ### 3.2. Promise.reject 생성
 
-```
+```js
 // Promise.reject 로 생성
-const promise = Promise.reject('error');
+const promise = Promise.reject("error");
 ```
 
 거부됨 상태인 프로미스를 생성한다.
 
 ### 3.3. Promise.resolve 생성
 
-```
+```js
 // Promise.resolve 로 생성
 const promise = Promise.resolve(params);
 
 const p1 = Promise.resolve(123);
-const p2 = Promise.resolve(p1);   // return p1
-console.log(p2 === p1);           // true
+const p2 = Promise.resolve(p1); // return p1
+console.log(p2 === p1); // true
 ```
 
 입력값이 프로미스라면 그 객체가 그대로 반환되고, 프로미스가 아니라면 이행됨 상태인 프로미스가 반환된다.
@@ -142,7 +142,7 @@ console.log(p2 === p1);           // true
 
 `then` 메소드는 항상 프로미스를 반환하기 때문에 하나의 프로미스에서 연속적으로 `then` 메소드를 호출할 수 있다.
 
-```
+```js
 getData().then(onResolve, onReject);
 ```
 
@@ -150,13 +150,16 @@ getData().then(onResolve, onReject);
 
 `onReject` 함수가 실행되고 나면 프로미스는 다시 이행됨 상태가 되어 4 다음에는 5 를 출력한다.
 
-```
+```js
 // print: 4 5
-Promise.reject('error')
-  .then(() => console.log('1'))
-  .then(() => console.log('2'))
-  .then(() => console.log('3'), () => console.log('4'))
-  .then(() => console.log('5'));
+Promise.reject("error")
+  .then(() => console.log("1"))
+  .then(() => console.log("2"))
+  .then(
+    () => console.log("3"),
+    () => console.log("4")
+  )
+  .then(() => console.log("5"));
 ```
 
 ### 4.2. catch
@@ -167,14 +170,14 @@ Promise.reject('error')
 
 예외 처리는 `then` 보다 `catch` 함수를 사용하는 게 가독성이 더 좋다.
 
-```
-Promise.reject('error').then(null, error => {
+```js
+Promise.reject("error").then(null, (error) => {
   console.log(error);
 });
 
-Promise.reject('error').catch(error => {
+Promise.reject("error").catch((error) => {
   console.log(error);
-})
+});
 ```
 
 `then` 은 `onResolve` 에서 에러가 발생했을 때 같은 함수 내에 있는 `onReject` 함수에서 처리할 수 없다.
@@ -183,7 +186,7 @@ Promise.reject('error').catch(error => {
 
 `catch` 도 마찬가지로 프로미스를 반환하기 때문에 계속해서 체이닝을 이어나갈 수 있다.
 
-```
+```js
 // onResolve 에서 에러가 발생해도 onReject 가 아닌 뒤에서 처리해야됨
 Promise.resolve().then(onResolve, onReject);
 
@@ -191,14 +194,14 @@ Promise.resolve().then(onResolve, onReject);
 // print: success then 2
 Promise.resolve()
   .then(() => {
-    throw new Error('then error');
+    throw new Error("then error");
   })
-  .catch(error => {
-    console.log('this is ' + error);
+  .catch((error) => {
+    console.log("this is " + error);
     return 2;
   })
-  .then(data => {
-    console.log('success then: ' + data);
+  .then((data) => {
+    console.log("success then: " + data);
   });
 ```
 
@@ -210,20 +213,20 @@ Promise.resolve()
 
 `finally` 는 이전에 사용된 프로미스를 그대로 반환하기 때문에 처리됨 상태인 프로미스의 데이터를 건드리지 않고 추가 작업을 할 수 있다.
 
-```
+```js
 // print: 123
 // print: finish promise
 Promise.resolve(123)
-  .then(data => {
+  .then((data) => {
     console.log(data);
     return data;
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error);
     return error;
   })
   .finally(() => {
-    console.log('finish promise');
+    console.log("finish promise");
   });
 ```
 
@@ -231,13 +234,14 @@ Promise.resolve(123)
 
 다음 예제를 통해 `Promise` 를 활용하는 방법들을 알아본다.
 
-```
+```js
 const getData1 = Promise.resolve(1);
 const getData2 = new Promise((resolve, reject) =>
-  setTimeout(function() {
-    console.log('3');
+  setTimeout(function () {
+    console.log("3");
     resolve(2);
-  }, 5000));
+  }, 5000)
+);
 ```
 
 ### 5.1. Promise.all: 병렬 처리
@@ -248,14 +252,12 @@ const getData2 = new Promise((resolve, reject) =>
 
 `Promise.all` 함수는 여러 개의 프로미스를 동시에 실행하며 프로미스가 모두 처리되면 처리됨 상태가 되고 하나라도 거부된다면 거부됨 상태가 된다.
 
-```
+```js
 // print: 3   (5초 뒤 출력)
 // print: 1 2
-Promise
-  .all([getData1, getData2])
-  .then(([data1, data2]) => {
-    console.log(data1, data2);
-  });
+Promise.all([getData1, getData2]).then(([data1, data2]) => {
+  console.log(data1, data2);
+});
 ```
 
 ### 5.2. Promise.race: 가장 빨리 처리된 프로미스
@@ -266,12 +268,10 @@ Promise
 
 프로미스 간의 격차가 커서 먼저 `Promise.race` 가 실행 되더라도 다른 프로미스의 작업은 중지되지 않는다.
 
-```
+```js
 // print: 1
 // print: 3   (5초 뒤 출력)
-Promise
-  .race([getData1, getData2])
-  .then(data => {
-    console.log(data);
-  });
+Promise.race([getData1, getData2]).then((data) => {
+  console.log(data);
+});
 ```

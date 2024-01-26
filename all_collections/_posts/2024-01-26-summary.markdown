@@ -22,14 +22,16 @@ categories: ["study", "javaScript", "React.js"]
 - `var` 선언과 `함수 선언문` 내에서만 호이스팅이 발생한다.
 - `let/const 변수 선언`과 `함수표현식`에서는 호이스팅이 발생하지 않는다
 
-```
-function foo() { // 함수선언문
-    console.log("hello");
+```js
+function foo() {
+  // 함수선언문
+  console.log("hello");
 }
 
-var foo2 = function() { // 함수표현식
-    console.log("hello2");
-}
+var foo2 = function () {
+  // 함수표현식
+  console.log("hello2");
+};
 ```
 
 - 변수에 할당된 함수표현식은 끌어올려지지 않기 떄문에 이때는 변수의 스코프 규칙을 그대로 따른다.
@@ -54,16 +56,18 @@ var foo2 = function() { // 함수표현식
 - 스코프는 함수를 호출할 때가 아니라 `어디에 선언하였는지`에 따라 결정된다. 이를 `렉시컬 스코핑`이라 한다.
   - `자신이 선언된 상위의 스코프를 모두 참조 가능`하다
 - 자신을 포함하고 있는 외부함수보다 내부함수가 더 오래 유지되는 경우, 외부함수 밖에서 내부함수가 호출되더라도 외부 함수의 지역변수에 접근할 수 있다. 이를 클로저라 부른다.
-  ```
+  ```js
   function outerFunc() {
-      var x = 10;
-      var innerFunc = function () { console.log(x); };
-      return innerFunc;
+    var x = 10;
+    var innerFunc = function () {
+      console.log(x);
+    };
+    return innerFunc;
   }
   /**
-      *  함수 outerFunc를 호출하면 내부 함수 innerFunc가 반환된다.
-      *  그리고 함수 outerFunc의 실행 컨텍스트는 소멸한다.
-      */
+   *  함수 outerFunc를 호출하면 내부 함수 innerFunc가 반환된다.
+   *  그리고 함수 outerFunc의 실행 컨텍스트는 소멸한다.
+   */
   var inner = outerFunc();
   inner(); // 10
   ```
@@ -168,17 +172,17 @@ var foo2 = function() { // 함수표현식
 - 배열 또는 객체의 값을 변수로 받는 방법
 - 배열의 경우
 
-```
+```js
 [x, y] = [1, 2]; // 이 형태로 배열형태 변수에 각각의 값을 받을 수 있다.
 ```
 
 - 객체의 경우
 
-```
-const obj = { firstName: 'Ungmo', lastName: 'Lee' };
-const { firstName, lastName } = obj;
+```js
+const obj = { firstName: "Ungmo", lastName: "Lee" };
+const { firstName, lastName } = obj;
 // const {f,l} = obj; 이렇게 받을 수 없다.**
-console.log(firstName, lastName); // Ungmo Lee
+console.log(firstName, lastName); // Ungmo Lee
 ```
 
 ### 스코프(Scope) 와 스코프 체이닝
@@ -227,7 +231,7 @@ console.log(firstName, lastName); // Ungmo Lee
   - 프로미스의 동작 중 오류가 발생하거나 문제가 있어 거부(reject)되면, `catch()` 함수가 호출된다.
   - 프로미스가 `fulfilled` 되거나 `reject`된 이후의 상태를 `settled`된 상태라고 한다.
 - 프로미스 생성은
-  ```
+  ```js
   new Promise(function(resolve, reject) { ... }
   ```
   - 의 형태로 선언한다.
@@ -492,19 +496,19 @@ console.log(firstName, lastName); // Ungmo Lee
      - 만약 컴포넌트내의 어떤 `함수`가 값을 리턴하는데 하나의 변화에도 값을 리턴하는데 많은 시간을 소요한다면 이 컴포넌트가 리렌더링 될 때마다 함수가 호출되면서 많은 시간을 소요하게 될 것이다.
      - 또 그 함수가 return되는 값이 자식 컴포넌트에도 사용이 된다면, 그 자식 컴포넌트도 함수가 호출 될 때마다 새로운 값을 받아 리렌더링 된다.
 
-   ```
-   useMemo(()=> func, [input_dependency])
+   ```js
+   useMemo(() => func, [input_dependency]);
    ```
 
    - `func`은 캐시하고 싶은 함수이고, `input_dependency`는 useMemo가 캐시할 func에 대한 입력의 배열로서 해당 값들이 변경되면 func이 호출된다.이것을 적용하면 `input_dependency`가 있는 데이터가 변할 때에만 평균을 구하는 연산을 수행하도록 한다. `input_dependency`에는 `users` state를 넣어준다.
 
-   ```
-     const average = useMemo(() => {
-       console.log("calculate average. It takes long time !!");
-       return users.reduce((acc, cur) => {
-         return acc + cur.score / users.length;
-       }, 0);
-     }, [users]);
+   ```js
+   const average = useMemo(() => {
+     console.log("calculate average. It takes long time !!");
+     return users.reduce((acc, cur) => {
+       return acc + cur.score / users.length;
+     }, 0);
+   }, [users]);
    ```
 
    - useMemo는 종속 변수들이 변하지 않으면 함수를 굳이 다시 호출하지 않고 이전에 반환한 참조값을 재사용 한다.즉, 함수 호출 시간도 세이브할 수 있고 같은 값을 props로 받는 하위 컴포넌트의 리렌더링도 방지할 수 있다.
@@ -561,7 +565,7 @@ console.log(firstName, lastName); // Ungmo Lee
 
 - `for`문
 
-```
+```js
 const practice = [
   { name: "개발자", value: 150, active: false },
   { name: "퉁이리", value: 200, active: true },
@@ -577,7 +581,7 @@ for (let i = 0; i < practice.length; i++) {
 
 - `while`문
 
-  ```
+  ```js
   const practice = [
     { name: "개발자", value: 150, active: false },
     { name: "퉁이리", value: 200, active: true },

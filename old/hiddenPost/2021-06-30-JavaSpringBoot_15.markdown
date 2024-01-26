@@ -1,17 +1,19 @@
 ---
 layout: post
-title:  "Java SpringBoot(15) - JDBC 연동"
-date:   2021-06-30 11:00:00 +0100
+title: "Java SpringBoot(15) - JDBC 연동"
+date: 2021-06-30 11:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(15) - JDBC 연동
+
 &nbsp;
 &nbsp;
 • **1. JDBC 환경 설정**
 &nbsp;
 • **build.gradle 파일에 jdbc, h2 DB 관련 라이브러리 추가**
-```
+
+```java
 
   plugins {
 	id 'org.springframework.boot' version '2.5.1'
@@ -42,10 +44,12 @@ categories:
   }
 
 ```
+
 &nbsp;
 &nbsp;
 • **스프링 부트 데이터베이스 연결 설정 추가**
-```
+
+```java
 
   // /resources/application.properties
   spring.datasource.url=jdbc:h2:tcp://localhost/~/test
@@ -53,16 +57,18 @@ categories:
   spring.datasource.username=sa
 
 ```
+
 &nbsp;
 &nbsp;
 • **JDBC Repository 구현(생략)**
 &nbsp;
 &nbsp;
 • **스프링 설정 변경**
-```
+
+```java
 
   // /main/java/com.miguel.hellospring/SpringConfig
-  
+
   .
   .
   .
@@ -94,7 +100,9 @@ categories:
   }
 
 ```
+
 &nbsp;
+
 - DataSource는 데이터베이스 커넥션을 획득할 때 사용하는 객체다. 스프링 부트는 데이터베이스 커넥션 정보를 바탕으로 DataSource를 생성하고 스프링 빈으로 만들어둔다. 그래서 DI를 받을 수 있다.
 - 스프링의 DI (Dependencies Injection)을 사용하면 기존 코드를 전혀 손대지 않고, 설정만으로 구현 클래스를 변경할 수 있다.
 

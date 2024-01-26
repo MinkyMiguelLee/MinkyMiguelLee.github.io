@@ -23,7 +23,7 @@ categories: ["study", "React.js"]
 
 만약 컴포넌트 내에 어떤 함수가 값을 리턴하는데 많은 시간을 소요한다면, 이 컴포넌트가 리렌더링 될 때마다 함수가 호출되면서 많은 시간을 소요하게 될 것이고, 그 함수가 반환하는 값을 하위 컴포넌트가 사용한다면 그 하위 컴포넌트는 매 함수호출마다 새로운 값을 받아 리렌더링할 것이다.
 
-```
+```js
 //UserList.jsx
 import { useState, useMemo useRef } from "react";
 import Item from "./Item";
@@ -71,20 +71,19 @@ export default UserList;
 
 위와 같은 문제는 useMemo를 통해 `average`를 최적화 함으로써 해결할 수 있다. useMemo는 아래와 같은 구조를 가진다.
 
-```
-useMemo(()=> func, [input_dependency])
+```js
+useMemo(() => func, [input_dependency]);
 ```
 
 `func`은 캐시하고 싶은 함수이고, `input_dependency`는 useMemo가 캐시할 func에 대한 입력의 배열로서 해당 값들이 변경되면 func이 호출된다.이것을 적용하면 `input_dependency`가 있는 데이터가 변할 때에만 평균을 구하는 연산을 수행하도록 한다. `input_dependency`에는 `users` state를 넣어준다.
 
-```
-  const average = useMemo(() => {
-    console.log("calculate average. It takes long time !!");
-    return users.reduce((acc, cur) => {
-      return acc + cur.score / users.length;
-    }, 0);
-  }, [users]);
-
+```js
+const average = useMemo(() => {
+  console.log("calculate average. It takes long time !!");
+  return users.reduce((acc, cur) => {
+    return acc + cur.score / users.length;
+  }, 0);
+}, [users]);
 ```
 
 useMemo는 종속 변수들이 변하지 않으면 함수를 굳이 다시 호출하지 않고 이전에 반환한 참조값을 재사용 한다.즉, 함수 호출 시간도 세이브할 수 있고 같은 값을 props로 받는 하위 컴포넌트의 리렌더링도 방지할 수 있다.
@@ -97,7 +96,7 @@ React.memo는 Hook이 아니기 때문에 클래스형 컴포넌트에서도 사
 
 위코드에서 몇가지 추가된 내용이 있다.
 
-```
+```js
 //UserList.jsx
 import { useState, useRef } from "react";
 import Item from "./Item";
@@ -111,14 +110,14 @@ function UserList() {
       id: 0,
       name: "sewon",
       age: 30,
-      score: 100
+      score: 100,
     },
     {
       id: 1,
       name: "kongil",
       age: 50,
-      score: 10
-    }
+      score: 10,
+    },
   ]);
 
   const average = useMemo(() => {
@@ -128,36 +127,36 @@ function UserList() {
     }, 0);
   }, [users]);
 
-   const addUser =() => {
+  const addUser = () => {
     setUsers([
       ...users,
       {
         id: (numberRef.current += 1),
         name: "yeonkor",
         age: 30,
-        score: 90
-      }
+        score: 90,
+      },
     ]);
-  }
+  };
 
   return (
-      <div>
-       <input
-         type="text"
-         value={text}
-         placeholder="아무 내용이나 입력하세요."
-         onChange={(event) => setText(event.target.value)}
-        />
-       <Average average={average} />
-       <button className="button" onClick={addUser}>
+    <div>
+      <input
+        type="text"
+        value={text}
+        placeholder="아무 내용이나 입력하세요."
+        onChange={(event) => setText(event.target.value)}
+      />
+      <Average average={average} />
+      <button className="button" onClick={addUser}>
         새 유저 생성
-       </button>
+      </button>
       {users.map((user) => {
         return (
           <Item key={user.id} user={user} /> // 아래 코드 참고
         );
       })}
-      </div>
+    </div>
   );
 }
 
@@ -166,9 +165,9 @@ export default UserList;
 
 이 전에 있던 코드에서 `Item`이라는 컴포넌트를 만들어 리스트를 만들어주고 `button`을 클릭할 때마다 `addUser`라는 함수가 실행되어 리스트가 추가되는 것을 구현하였다.
 
-```
+```js
 //Item.jsx
-import React,{ memo } from "react";
+import React, { memo } from "react";
 
 function Item({ user }) {
   console.log("Item component render");
@@ -192,7 +191,7 @@ React.memo를 적용했으므로 새 유저 생성 버튼을 눌러 `users` �
 
 useMemo가 리턴되는 값을 memoize 시켜주었는데, useMemo와 비슷한 useCallback은 **함수 선언을 memoize 하는데 사용된다.**`UserList` 방금 눌렀던 button 태그를 하위 컴포넌트인 `Button` 컴포넌트를 새로 만들고 교체해 설명을 진행한다.
 
-```
+```js
 import React.{memo} from "react";
 
 function Button({ onClick }) {
@@ -225,7 +224,7 @@ onClick 함수는 `UserList`에서 전달받고 있다고 한다.UserList는 in
 
 흔히 작업을 하다보면 props의 값으로 객체를 넘겨주는 경우가 많은데, 이때 props로 전달하는 형태에 주의 하여야 한다.
 
-```
+```js
 // 생성자 함수
 <Component prop={new Obj("x")} />
 // 객체 리터럴
@@ -238,7 +237,7 @@ onClick 함수는 `UserList`에서 전달받고 있다고 한다.UserList는 in
 
 ### **안좋은 예(🙅🏻‍♂️)**
 
-```
+```js
 // UserList.jsx
 function UserList() {
 {...}
@@ -289,7 +288,7 @@ export default Item;
 
 ### **좋은 예(🙆🏻‍♂️)**
 
-```
+```js
 // UserList.jsx
 function UserList() {
 {...}
@@ -359,27 +358,26 @@ export default memo(Item);
 
 기존의 useState를 사용하며, 대부분 setState시에 새로운 상태를 파라미터로 넣어주었다.setState를 사용할 때 새로운 상태를 파라미터로 넣는 대신, 상태 업데이트를 어떻게 할지 정의해 주는 업데이트 함수를 넣을 수도 있는데,이렇게 하면 **useCallback을 사용할 때 두 번째 파라미터로 넣는 배열에 값을 넣어주지 않아도 된다.**
 
-```
+```js
 // 예시) 삭제 함수
 const onRemove = useCallback(
-  id => {
-    setTodos(todos.filter(todo => todo.id !== id));
+  (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   },
-  [todos],
+  [todos]
 );
 
 // 예시) 함수형 업데이트 후
-const onRemove = useCallback(id => {
-  setTodos(todos => todos.filter(todo => todo.id !== id));
+const onRemove = useCallback((id) => {
+  setTodos((todos) => todos.filter((todo) => todo.id !== id));
 }, []);
-
 ```
 
 # **7. Input에 onChange 최적화**
 
 보통 input 태그에 onChange 이벤트를 줄때 타이핑을 할때마다 해당 컴포넌트가 렌더링 되어, 최적화 방법을 많이 찾곤한다.`lodash`라고 최적화 라이브러리를 쓰기도 하는데, 아래 코드는 라이브러리를 쓰지 않고, 최적화 시킬수 있는 방법이다.
 
-```
+```js
 // 예시) 최적화 전(X)
 //UserList.jsx
 function UserList() {

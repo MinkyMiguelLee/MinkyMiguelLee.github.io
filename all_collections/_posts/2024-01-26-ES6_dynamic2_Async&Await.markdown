@@ -25,22 +25,22 @@ categories: ["study", "javaScript"]
 
 리턴값이 프로미스라면 그대로 반환된다.
 
-```
+```js
 async function getData1() {
   return 111;
 }
 
 const getData2 = async () => {
   throw new Error(222);
-}
+};
 
 async function getData3() {
   return Promise.resolve(333);
 }
 
-getData1().then(data => console.log(data));     // 111
-getData2().catch(err => console.log('getData2: ' + err));// getData2: Error: 222
-getData3().then(data => console.log(data));     // 333
+getData1().then((data) => console.log(data)); // 111
+getData2().catch((err) => console.log("getData2: " + err)); // getData2: Error: 222
+getData3().then((data) => console.log(data)); // 333
 ```
 
 ### 1.2. await
@@ -49,19 +49,19 @@ getData3().then(data => console.log(data));     // 333
 
 `await` 키워드를 붙여서 프로미스를 사용하면 해당 프로미스가 처리됨 상태가 될 때까지 기다린다.
 
-```
+```js
 function printAfter(seconds) {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(() => {
-      console.log('print ' + seconds);
+      console.log("print " + seconds);
       resolve(seconds);
-    }, seconds * 1000)
-  },);
+    }, seconds * 1000);
+  });
 }
 
 async function log() {
-  const data1 = await printAfter(3);    // 3 초 뒤 출력
-  const data2 = await printAfter(5);    // 8 초 뒤 출력
+  const data1 = await printAfter(3); // 3 초 뒤 출력
+  const data2 = await printAfter(5); // 8 초 뒤 출력
   console.log(data1, data2);
 }
 
@@ -78,10 +78,10 @@ log();
 
 프로미스는 생성과 동시에 실행된다는 점을 활용하여 프로미스 생성을 먼저 하고 `await` 키워드를 나중에 호출하는 방법을 사용하면 된다.
 
-```
+```js
 async function log() {
-  const p3 = printAfter(3);     // 3초 뒤 출력
-  const p5 = printAfter(5);     // 5초 뒤 출력
+  const p3 = printAfter(3); // 3초 뒤 출력
+  const p5 = printAfter(5); // 5초 뒤 출력
 
   const data1 = await p3;
   const data2 = await p5;
@@ -92,7 +92,7 @@ async function log() {
 
 아니면 `Promise.all` 을 사용한다면 더 간단하게 표현 할 수 있다.
 
-```
+```js
 async function log() {
   const [data1, data2] = await Promise.all([printAfter(3), printAfter(5)]);
 
@@ -104,7 +104,7 @@ async function log() {
 
 `try catch` 문으로 감싸면 async / sync 함수 구분하지 않고 발생하는 예외들을 모두 잡는다.
 
-```
+```js
 async function log() {
   try {
     const data = printAfter(3);

@@ -16,7 +16,7 @@ VS Code 에서 자동 코드 포맷팅을 위해 사용하는 prettier 전역 �
    &nbsp;
    &nbsp;
 
-```
+```json
 // prettire 옵션 목록
 
   // 한 줄이 이 글자수를 넘게 되면 들여쓰기되어 코드가 세로로 정리된다. (default: 80)
@@ -51,8 +51,6 @@ VS Code 에서 자동 코드 포맷팅을 위해 사용하는 prettier 전역 �
       ignorePath
   // 이 확장 기능을 비활성화 할 언어 ID 목록
       disableLanguages: ["vue"]
-
-
 ```
 
 &nbsp;

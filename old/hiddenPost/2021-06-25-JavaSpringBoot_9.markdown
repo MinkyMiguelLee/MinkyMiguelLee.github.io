@@ -19,7 +19,7 @@ categories:
 &nbsp;
 • **2. MemberServiceTest 코드**
 
-```
+```java
 
   package com.miguel.hellospring.service;
 
@@ -111,7 +111,7 @@ categories:
 • **4. 변경된 MemberService 코드**
 &nbsp;
 
-```
+```java
 
   package com.miguel.hellospring.service;
 

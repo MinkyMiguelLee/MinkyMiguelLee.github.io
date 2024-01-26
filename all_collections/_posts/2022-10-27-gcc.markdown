@@ -5,7 +5,7 @@ date: 2022-10-27 17:54:00 +0100
 categories: ["tips", "npm"]
 ---
 
-```
+```bash
 npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')}catch(e){}"`
 
 ```
@@ -25,7 +25,7 @@ npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')
 
 > postinstall is called after a package's dependency tree changes are written to the disk -- e.g. after a dependency or transitive dependency is added, removed, or changed. It is guaranteed to be called in topological order (in other words, your dependencies' postinstalls will always run before yours). For backwards compatibility, preinstall and install are called as part of postinstall.
 
-```
+```bash
   // root 권한에서
   yum -y install gcc
   yum -y install gcc-c++

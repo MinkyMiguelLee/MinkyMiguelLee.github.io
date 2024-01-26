@@ -12,30 +12,29 @@ javascript debugger 사용 방법에 대해 정리한다.
 
 **launch.json 작성**
 
-```
-  // launch.json
+```json
+// launch.json
 
-  {
-      "configurations": [
-          {
-              "type": "chrome",
-              "request": "launch",
-              "name": "chrome debugger",
-              "url": "http://localhost:3000",
-              "webRoot": "${workspaceFolder}",
-              "sourceMaps": true,
-              "trace": true
-          }
-      ]
-  }
-
+{
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "chrome debugger",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "trace": true
+    }
+  ]
+}
 ```
 
 **typescript의 경우**
 
 **tsconfig.json**을 일부 수정해 주어야 한다.
 
-```
+```json
   // compilerOptions 항목의 sourceMap을 true로!
 
   {

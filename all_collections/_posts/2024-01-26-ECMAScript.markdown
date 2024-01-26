@@ -34,7 +34,7 @@ categories: ["study", "javaScript"]
 - for-of 반복문
   - 반복 가능한 객체에 사용 가능한 반복문
   - 배열, 문자열, 맵, 리스트, 객체 등의 자료형에 대해 사용 가능
-    ```
+    ```js
     for (variable of iterable) {
       // code block to be executed
     }
@@ -78,7 +78,7 @@ categories: ["study", "javaScript"]
     - 원시 타입 : 객체도, 메서드도 아닌 타입
   - 심볼 생성
 
-  ```
+  ```js
   const sym = Symbol();
 
   // 심볼 생성시, 구분하기 위한 데이터를 추가하여 생성할 수도 있다.
@@ -90,14 +90,14 @@ categories: ["study", "javaScript"]
     - 심볼로부터 반환되는 값은 항상 고유하다
     - 동일한 심볼을 사용하고 싶다면
 
-    ```
+    ```js
     const s1 = Symbol();
     const s2 = s1;
 
     // 또는, Symbol.for() 메서드를 통해 생성한다
 
-    const s1 = Symbol.for('val');
-    const s2 = Symbol.for('val');
+    const s1 = Symbol.for("val");
+    const s2 = Symbol.for("val");
     ```
 
   - 일반적인 원시 데이터 타입과는 다르게, 심볼은 new연산자를 통해 Wrapper를 생성할 수 없다.
@@ -107,7 +107,7 @@ categories: ["study", "javaScript"]
 
 - 디폴트 파라미터 값
   - ES6에서는 함수의 파라미터에 디폴트 값을 줄 수 있다.
-  ```
+  ```js
   function myFunction(x, y = 10) {
     // y is 10 if not passed or undefined
     return x + y;
@@ -118,7 +118,7 @@ categories: ["study", "javaScript"]
 
   - rest parameter(...)는 함수에 정의되지 않은 여러 개의 아규먼트를 배열 형태로 받을 수 있도록 해준다.
 
-  ```
+  ```js
   function sum(...args) {
     let sum = 0;
     for (let arg of args) sum += arg;

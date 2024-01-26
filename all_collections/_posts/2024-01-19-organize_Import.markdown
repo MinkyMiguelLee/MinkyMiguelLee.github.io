@@ -10,7 +10,7 @@ VS Code의 현재 프로젝트 전체 파일에 organize import 를 적용하기
 
 vsCode의 설정 -> 사용자 설정 -> 설정 파일을 열어 다음 코드를 추가한다.
 
-```
+```json
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit"
   }
@@ -34,7 +34,7 @@ React를 import 해 줘야 하기 때문에 발생하는 오류이다.
 Next.js를 사용하는 프로젝트의 경우 Next.js가 알아서 위 작업을 해 주기 때문에 eslint 파일에
 아래 코드를 추가하여 ignore 할 수 있다.
 
-```
+```json
   'react/react-in-jsx-scope': 'off',
 ```
 
@@ -42,17 +42,14 @@ Next.js를 사용하는 프로젝트의 경우 Next.js가 알아서 위 작업�
 
 [react-in-jsx-scope 관련 stackOverflow](https://stackoverflow.com/questions/42640636/react-must-be-in-scope-when-using-jsx-react-react-in-jsx-scope)
 
-```
-If you'd like to automate the inclusion of import React from 'react' for all files that use jsx syntax, install the react-require babel plugin:
+> If you'd like to automate the inclusion of import React from 'react' for all files that use jsx syntax, install the react-require babel plugin:
+>
+> npm install babel-plugin-react-require --save-dev
+> Add react-require into .babelrc. This plugin should be defined before transform-es2015-modules-commonjs plugin because it's using ES2015 modules syntax to import React into scope.
 
-npm install babel-plugin-react-require --save-dev
-Add react-require into .babelrc. This plugin should be defined before transform-es2015-modules-commonjs plugin because it's using ES2015 modules syntax to import React into scope.
-
+```json
 {
-  "plugins": [
-    "react-require"
-  ]
+  "plugins": ["react-require"]
 }
-Source: https://www.npmjs.com/package/babel-plugin-react-require
-
+// Source: https://www.npmjs.com/package/babel-plugin-react-require
 ```

@@ -15,29 +15,31 @@ Iterable은 `Symbol.iterator`라는 메서드를 가지고있는 객체이다. 
 
 피보나치 수열을 생성하는 코드를 작성하였다. `fibonacci`변수가 참조하고 있는 객체는 Iterable이다.
 
-```
+```js
 const fibonacci = {
-    [Symbol.iterator]() {
-        let n1 = 0, n2 = 1, value;
-        return {
-            next() {
-                value = n1;
-                n1 = n2;
-                n2 = value + n2;
-                // [value, n1, n2] = [n1, n2, n1 + n2]
+  [Symbol.iterator]() {
+    let n1 = 0,
+      n2 = 1,
+      value;
+    return {
+      next() {
+        value = n1;
+        n1 = n2;
+        n2 = value + n2;
+        // [value, n1, n2] = [n1, n2, n1 + n2]
 
-                if (value > 100) {
-                    return {done: true};
-                } else {
-                    return {value};
-                }
-            }
-        };
-    }
+        if (value > 100) {
+          return { done: true };
+        } else {
+          return { value };
+        }
+      },
+    };
+  },
 };
 
 for (const n of fibonacci) {
-    console.log(n);
+  console.log(n);
 }
 ```
 
@@ -61,33 +63,35 @@ for (const n of fibonacci) {
 
 커스텀 객체는 `Symbol.iterator` 메서드를 추가함으로써 iterable이 될 수 있다.
 
-```
+```js
 function objectEntries(obj) {
-    let index = 0,
-        keys = Object.getOwnPropertyNames(obj)
-                .concat(Object.getOwnPropertySymbols(obj)); // Reflect.ownKeys(obj);
+  let index = 0,
+    keys = Object.getOwnPropertyNames(obj).concat(
+      Object.getOwnPropertySymbols(obj)
+    ); // Reflect.ownKeys(obj);
 
-    return {
-        [Symbol.iterator]() {
-            return this;
-        },
-        next() {
-            if (index === keys.length) {
-                return {done: true};
-            } else {
-                let k = keys[index],
-                    v = obj[k];
-                index += 1;
+  return {
+    [Symbol.iterator]() {
+      return this;
+    },
+    next() {
+      if (index === keys.length) {
+        return { done: true };
+      } else {
+        let k = keys[index],
+          v = obj[k];
+        index += 1;
 
-                return {value: [k, v]};
-            }
-        }
-    };
+        return { value: [k, v] };
+      }
+    },
+  };
 }
 
-let obj = {foo: 1, bar: 2, baz: 3};
-for (const pair of objectEntries(obj)) { // for (const [k, v] of objectEntries(obj))
-    console.log(pair[0], 'is', pair[1]); // console.log(k, 'is', v);
+let obj = { foo: 1, bar: 2, baz: 3 };
+for (const pair of objectEntries(obj)) {
+  // for (const [k, v] of objectEntries(obj))
+  console.log(pair[0], "is", pair[1]); // console.log(k, 'is', v);
 }
 ```
 
@@ -97,15 +101,15 @@ for (const pair of objectEntries(obj)) { // for (const [k, v] of objectEntries(o
 
 **for-of loop**
 
-```
+```js
 for (const value of someIterable) {
-    // ...
+  // ...
 }
 ```
 
 **spread Operator**
 
-```
+```js
 // Iterable의 모든  value들이 arr에 추가된다.
 let arr = [firstElem, ...someIterable, lastElem];
 
@@ -115,7 +119,7 @@ someFunction(firstArg, ...someIterable, lastArg);
 
 **Positional Destructing**
 
-```
+```js
 // Iterable의 첫 3개 값들이 저장된다.
 let [a, b, c] = someIterable;
 ```
@@ -130,26 +134,26 @@ Generator의 반복이 끝나는 시점은 3가지 경우인데, generator 함�
 
 # **A Basic Generator**
 
-```
+```js
 function* myGenFn() {
-    yield 1;
-    yield 2;
-    return 3;
+  yield 1;
+  yield 2;
+  return 3;
 }
 
 let iterator = myGenFn(),
-    capture;
+  capture;
 
-console.log('--------------- do-while loop ---------------');
+console.log("--------------- do-while loop ---------------");
 do {
-    capture = iterator.next();
-    console.log(capture);
+  capture = iterator.next();
+  console.log(capture);
 } while (!capture.done);
 
 //또는
-console.log('\n--------------- for-of loop ---------------');
+console.log("\n--------------- for-of loop ---------------");
 for (const n of myGenFn()) {
-    console.log(n);
+  console.log(n);
 }
 ```
 
@@ -159,44 +163,46 @@ for (const n of myGenFn()) {
 
 다음은 Generator를 이용한 fibonacci 수열 생성이다.
 
-```
+```js
 function* fibonacci() {
-    let prev = 0, curr = 1; // [prev, curr] = [0, 1];
-    yield prev;
-    yield curr;
-    while (true) {
-        let temp = prev;
-        prev = curr;
-        curr = temp + curr;
-        // [prev, curr] = [curr, prev + curr];
+  let prev = 0,
+    curr = 1; // [prev, curr] = [0, 1];
+  yield prev;
+  yield curr;
+  while (true) {
+    let temp = prev;
+    prev = curr;
+    curr = temp + curr;
+    // [prev, curr] = [curr, prev + curr];
 
-        yield curr;
-    }
+    yield curr;
+  }
 }
 
 for (const n of fibonacci()) {
-    if (n > 100) break;
-    console.log(n);
+  if (n > 100) break;
+  console.log(n);
 }
 ```
 
 또한 generator 메서드를 포함하고 있는 객체로 구현할 수 있다.
 
-```
+```js
 let fib = {
-    *[Symbol.iterator]() {
-        let prev = 0, curr = 1; // [prev, curr] = [0, 1];
-        yield prev;
-        yield curr;
-        while (true) {
-            let temp = prev;
-            prev = curr;
-            curr = temp + curr;
-            // [prev, curr] = [curr, prev + curr];
+  *[Symbol.iterator]() {
+    let prev = 0,
+      curr = 1; // [prev, curr] = [0, 1];
+    yield prev;
+    yield curr;
+    while (true) {
+      let temp = prev;
+      prev = curr;
+      curr = temp + curr;
+      // [prev, curr] = [curr, prev + curr];
 
-            yield curr;
-        }
+      yield curr;
     }
+  },
 };
 
 for (const n of fib) {
@@ -209,35 +215,35 @@ for (const n of fib) {
 
 - `next(value)`이 메서드는 다음 값을 얻는 역할을 하며, Iteraotr의 `next`메서드와 유사하지만, optional argument를 받는다는 점이 다르다.(첫번째 호출에서는 받지 않고 무시한다.) 이 매개변수는 바로 이전의 `yield [expression]`의 반환값으로 사용된다. (아래 예시를 참고.)
 
-```
-    function* fibonacci() {
-        var fn1 = 1;
-        var fn2 = 1;
-        while (true) {
-            var current = fn2;
-            fn2 = fn1;
-            fn1 = fn1 + current;
+```js
+function* fibonacci() {
+  var fn1 = 1;
+  var fn2 = 1;
+  while (true) {
+    var current = fn2;
+    fn2 = fn1;
+    fn1 = fn1 + current;
 
-            var reset = yield current;
-            console.log('----> reset', reset);
-            if (reset) {
-                fn1 = 1;
-                fn2 = 1;
-            }
-        }
+    var reset = yield current;
+    console.log("----> reset", reset);
+    if (reset) {
+      fn1 = 1;
+      fn2 = 1;
     }
+  }
+}
 
-    var sequence = fibonacci();
-    console.log(sequence.next().value);     // 1
-    console.log(sequence.next().value);     // 1
-    console.log(sequence.next().value);     // 2
-    console.log(sequence.next().value);     // 3
-    console.log(sequence.next().value);     // 5
-    console.log(sequence.next().value);     // 8
-    console.log(sequence.next(true).value); // reset = true -> yield 1
-    console.log(sequence.next().value);     // 1
-    console.log(sequence.next().value);     // 2
-    console.log(sequence.next().value);     // 3
+var sequence = fibonacci();
+console.log(sequence.next().value); // 1
+console.log(sequence.next().value); // 1
+console.log(sequence.next().value); // 2
+console.log(sequence.next().value); // 3
+console.log(sequence.next().value); // 5
+console.log(sequence.next().value); // 8
+console.log(sequence.next(true).value); // reset = true -> yield 1
+console.log(sequence.next().value); // 1
+console.log(sequence.next().value); // 2
+console.log(sequence.next().value); // 3
 ```
 
 - `return(value)`이 메서드는 매개변수로 온 값을 value로써 반환하고, Generator를 종료시킨다.`{value: value, done: true}`

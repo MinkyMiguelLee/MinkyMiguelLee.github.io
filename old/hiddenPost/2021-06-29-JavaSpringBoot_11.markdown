@@ -1,16 +1,15 @@
 ---
 layout: post
-title:  "Java SpringBoot(11) - Spring Bean ~ Java code로 직접 등록"
-date:   2021-06-29 11:00:00 +0100
+title: "Java SpringBoot(11) - Spring Bean ~ Java code로 직접 등록"
+date: 2021-06-29 11:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(11) - Spring Bean ~ Java code로 직접 등록
-&nbsp;
-&nbsp;
+
 • **1. SpringConfig 코드**
-&nbsp;
-```
+
+```java
 
   package com.miguel.hellospring;
 
@@ -36,14 +35,16 @@ categories:
           // 향후 DB가 확정되어 구성이 완료되었다면, 이 부분만 바꾸어주면 된다.
           return new MemoryMemberRepository();
       }
-      
+
   }
 
 ```
+
 &nbsp;
 &nbsp;
 • **2. DI 방식의 장단점**
 &nbsp;
+
 - Dependency Injection에는 필드 주입, 세터 주입, 생성자 주입의 세 가지 방법이 있다.
 - 생성자 주입 - Argument에 생성자를 통해 만들어 낸 컴포넌트를 주입하는 방식
 - 필드 주입 - 생성자 없이, 필드 자체에 @Autowired를 주어 주입하는 방식. 추천하는 방식이 아님.

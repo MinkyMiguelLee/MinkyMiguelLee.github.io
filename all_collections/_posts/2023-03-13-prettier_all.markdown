@@ -9,13 +9,13 @@ VS Code의 현재 프로젝트 전체 파일에 Prettier formatting을 수행하
 
 이후, package.json에 다음과 같은 script를 추가한다.
 
-```
+```json
   "pretty": "prettier --write \"./**/*.{js,jsx,ts,tsx,json}\""
 ```
 
 만일, 프로젝트에서 eslint를 함께 사용하고 있다면 위 스크립트에
 
-```
+```json
   eslint --fix
 ```
 
@@ -23,7 +23,7 @@ VS Code의 현재 프로젝트 전체 파일에 Prettier formatting을 수행하
 
 이후,
 
-```
+```bash
   npm run pretty
 
 ```

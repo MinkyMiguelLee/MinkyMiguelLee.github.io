@@ -1,22 +1,25 @@
 ---
 layout: post
-title:  "Java SpringBoot(7) - 테스트케이스"
-date:   2021-06-24 10:00:00 +0100
+title: "Java SpringBoot(7) - 테스트케이스"
+date: 2021-06-24 10:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(7) - 테스트케이스
+
 &nbsp;
 &nbsp;
 • **1. JUnit**
 &nbsp;
+
 - 개발한 기능을 실행해서 테스트 할 때, 자바의 main 메서드를 실행하거나 웹 어플리케이션의 컨트롤러를 실행하여 해당 기능을 테스트한다. 이러한 방법은 준비 및 실행에 오랜 시간이 걸리고, 반복 실행이 어려우며 여러 테스트를 한 번에 실행하기 어렵다는 단점이 있다.
 - 이러한 단점을 보완하기 위해 자바는 JUnit이라는 프레임워크로 테스트를 실행한다.
 
 &nbsp;
 &nbsp;
 • **2. 회원관리 도메인 코드**
-```
+
+```java
 
   // /domain/Member
   package com.miguel.hellospring.domain;
@@ -44,10 +47,12 @@ categories:
 }
 
 ```
+
 &nbsp;
 &nbsp;
 • **3. 회원관리 repository 코드**
-```
+
+```java
 
   // Interface - MemberRepository
   package com.miguel.hellospring.repository;
@@ -63,11 +68,13 @@ categories:
       Optional<Member> findByName(String name);
       List<Member> findAll();
 
-  } 
+  }
 
 ```
+
 &nbsp;
-```
+
+```java
 
   // class - MemoryMemberRepository
   package com.miguel.hellospring.repository;
@@ -105,11 +112,12 @@ categories:
   }
 
 ```
+
 &nbsp;
 &nbsp;
 • **4. 회원관리 repository - Test 코드**
 
-```
+```java
 
   package com.miguel.hellospring.repository;
 

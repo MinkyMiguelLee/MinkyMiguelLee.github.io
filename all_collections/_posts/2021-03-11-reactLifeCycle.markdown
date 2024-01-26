@@ -20,7 +20,7 @@ categories: ["study", "React.js"]
 초기값(component가 가지고 있을 state 등...)을 세팅한다던지 컴포넌트
 생성 과정에서 선행되어야 하는 작업이 있다면 constructor에서 수행한다.
 
-```
+```js
   constructor(props){
     super(props);
     // 컴포넌트 생성 시 가장 먼저 수행하고자 하는 작업 수행
@@ -33,7 +33,7 @@ categories: ["study", "React.js"]
 Mounting(새로운 컴포넌트 생성) 과정에서도 사용되고,
 props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
 
-```
+```js
   static getDerivedStateFromProps(nextProps, prevState){
     // nextProps : state에 넣어줄 props 값
     // prevState : 업데이트 되기 전의, 현재 state
@@ -56,7 +56,7 @@ props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
 명시한다. 이벤트 리스닝, API 요청, 외부 라이브러리 연동,
 컴포넌트에서 필요한 데이터 요청, DOM 관련 작업을 수행한다.
 
-```
+```js
   componentDidMount(){
     ...
   }
@@ -78,7 +78,7 @@ props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
 성능 최적화를 위해 render를 하지 않도록 한다.
 (true-render/false-not render)
 
-```
+```js
   shouldComponentUpdate(nextProps, nextState){
     // 이 함수를 별도로 설정해주지 않는다면, 기본적으로 return true;
     return true;
@@ -93,7 +93,7 @@ return 하여, 그 return값을 componentDidUpdate에서
 주로 rendering 후, 스크롤의 위치, dom의 크기 등을 사전에
 가져오고자 할 때 사용된다.
 
-```
+```js
   getSnapshotBeforeUpdate(prevProps, prevState){
     // 이전의 상태값들을 받아오므로, 이전 상태값이 필요하다면 활용 가능하다.
     // 여기서 리턴한 값을 componentDidupdate에서 snapshot이라는 parameter로
@@ -104,7 +104,7 @@ return 하여, 그 return값을 componentDidUpdate에서
 
 • **componentDidUpdate** : Updating 작업 후, component가 update 완료된 후 호출되는 함수.
 
-```
+```js
   componentDidUpdate(prevProps, prevState, snapshot){
     // 업데이트 이전 값을 받아올 수 있다.
     // 예를 들어, 특정 props 값이 변경되었을 때 이를 확인하여 작업을 수행할 수 있다.
@@ -120,7 +120,7 @@ return 하여, 그 return값을 componentDidUpdate에서
 &nbsp;
 • **componentWillUnmount** : componentDidMount에서 선언한 이벤트 리스너를 없애는 작업 등을 수행
 
-```
+```js
   componentWillUnmount(){
     // 컴포넌트가 사라질 때 수행한다. 특정 조건일 때 이 함수를 호출하여 특정 작업을
     // 수행하도록 할 수 있다.
@@ -138,7 +138,7 @@ return 하여, 그 return값을 componentDidUpdate에서
 componentDidCatch를 사용하여 크래쉬를 방지하고 특정 작업을
 수행할 수 있다.
 
-```
+```js
   componentDidCatch(error, info){
     // error : 어떤 에러가 발생했는지
     // info : 에러 발생 위치 등 정보...

@@ -1,16 +1,18 @@
 ---
 layout: post
-title:  "Java SpringBoot(10) - Spring Bean ~ component Scan"
-date:   2021-06-25 16:00:00 +0100
+title: "Java SpringBoot(10) - Spring Bean ~ component Scan"
+date: 2021-06-25 16:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(10) - Spring Bean ~ component Scan
+
 &nbsp;
 &nbsp;
 • **1. Controller 코드**
 &nbsp;
-```
+
+```java
 
   package com.miguel.hellospring.controller;
 
@@ -46,8 +48,10 @@ categories:
   }
 
 ```
+
 &nbsp;
 &nbsp;
+
 - 생성자에 @Autowired가 있으면 스프링이 연관된 객체를 스프링 컨테이너에서 찾아 넣어준다. 이렇게 객체 의존 관계를 외부에서 넣어주는 것을 DI라고 한다.
 - 이전 테스트에서는 개발자가 직접 주입했고(new로 새로운 객체 생성), 여기서는 @Autowired에 의해 스프링을 주입한다.
 - controller가 MemberService를 가져다 써야 한다. 하지만, Spring이 관리를 하게 되면, 모두 Spring Container에 등록을 하고, 받아 쓰도록 바꿔줘야 한다.
@@ -59,6 +63,7 @@ categories:
 &nbsp;
 • **2. Component Scan**
 &nbsp;
+
 - 위와 같이 @Controller, @Service, @Repository같은 Annotation을 통해 의존관계를 주입하는 것을 Component Scan이라고 한다.
 - 각각의 Controller, Service, Repository Annotation 내에는 @Component라는 Annotation이 들어있다. 즉, 특수한 확장 버전인 것
 - 스프링이 올라올 때, 각각의 Component Annotation이 있는 Class가 있으면 해당 Class의 객체를 하나씩 만들어 Spring Container에 등록한다.
@@ -67,9 +72,10 @@ categories:
 - 이 외에, 자바 코드로 직접 스프링 빈을 등록하는 방법도 있다.
 
 &nbsp;
-- *@Component* Annotation 이 있으면 스프링 빈으로 자동 등록
-- *@Controller* 컨트롤러가 스프링 빈으로 자동 등록된 이유도 컴포넌트 스캔 때문이다.
-- *@Component* 를 포함하는 @Repository, @Service, @Controller도 자동 등록된다.
+
+- _@Component_ Annotation 이 있으면 스프링 빈으로 자동 등록
+- _@Controller_ 컨트롤러가 스프링 빈으로 자동 등록된 이유도 컴포넌트 스캔 때문이다.
+- _@Component_ 를 포함하는 @Repository, @Service, @Controller도 자동 등록된다.
 - 기본적으로, 메인 코드가 위치한 경로로부터 하위 경로들은 스프링이 모두 뒤져서 자동으로 Spring Bean으로 등록하지만,
 - 하지만, 동일한 높이이거나 메인 코드보다 상위 경로는 스캔하지 않는다.
 

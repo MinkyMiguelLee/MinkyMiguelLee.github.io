@@ -7,7 +7,7 @@ categories: ["study", "javaScript"]
 
 ### for문
 
-```
+```js
 const practice = [
   { name: "개발자", value: 150, active: false },
   { name: "퉁이리", value: 200, active: true },
@@ -23,7 +23,7 @@ for (let i = 0; i < practice.length; i++) {
 
 ### while문
 
-```
+```js
 const practice = [
   { name: "개발자", value: 150, active: false },
   { name: "퉁이리", value: 200, active: true },
@@ -43,7 +43,7 @@ while (i < practice.length) {
 
 ### forEach
 
-```
+```js
 const practice = [
   { name: "개발자", value: 150, active: false },
   { name: "퉁이리", value: 200, active: true },
@@ -64,7 +64,7 @@ practice.forEach((data) => console.log(data.name));
 
 ### map
 
-```
+```js
 const practice = [
   { name: "개발자", value: 150, active: false },
   { name: "퉁이리", value: 200, active: true },
@@ -84,7 +84,7 @@ console.log(practiceNames);
 
 ### filter
 
-```
+```js
 const practice = [
   { name: "개발자", value: 150, active: false },
   { name: "퉁이리", value: 200, active: true },
@@ -105,7 +105,7 @@ console.log(practice220);
 
 ### reduce
 
-```
+```js
 const practice = [
   { name: "개발자", value: 150, active: false },
   { name: "퉁이리", value: 200, active: true },

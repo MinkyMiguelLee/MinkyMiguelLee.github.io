@@ -13,14 +13,16 @@ categories: ["study", "javaScript"]
 
 단축 속성명 (shorthand property names) 로 객체 리터럴 코드를 간편하게 작성할 수 있다.
 
-```
-const name = 'alice';
+```js
+const name = "alice";
 const obj = {
-    age: 21,
-    name,
-    getName() { return this.name; },
-}
-console.log(obj);   // { age: 21, name: "alice", getName: ƒ getName() }
+  age: 21,
+  name,
+  getName() {
+    return this.name;
+  },
+};
+console.log(obj); // { age: 21, name: "alice", getName: ƒ getName() }
 ```
 
 새로 만드려는 객체의 속성명이 이미 변수로 존재하면 변수 이름만 적어주면 된다.
@@ -35,7 +37,7 @@ console.log(obj);   // { age: 21, name: "alice", getName: ƒ getName() }
 
 계산된 속성명 (computed property names) 으로 객체의 속성명을 동적으로 결정할 수 있다.
 
-```
+```js
 function create1(key, value) {
   const obj = {};
   obj[key] = value;
@@ -68,7 +70,7 @@ key 를 대괄호 [ ] 로 감싸는 이유는 `return { key: value }` 처럼 �
 
 하지만 전개 연산자를 사용한다면 numbers 배열의 갯수가 몇개든 전부 전달할 수 있다.
 
-```
+```js
 Math.max(1, 2, 3, 4);
 
 const numbers = [1, 2, 3, 4];
@@ -83,42 +85,42 @@ Math.max(...numbers);
 
 배열의 경우 전개 연산자를 사용하면 그 순서가 유지된다.
 
-```
+```js
 const arr1 = [1, 2, 3];
-const obj1 = { age: 23, name: 'alice' };
+const obj1 = { age: 23, name: "alice" };
 
 const arr2 = [...arr1];
 const obj2 = { ...obj1 };
 arr2.push(4);
 obj2.age = 80;
 
-console.log(arr1);      // [1, 2, 3]
-console.log(arr2);      // [1, 2, 3, 4]
-console.log(obj1);      // { age: 23, name: 'alice' }
-console.log(obj2);      // { age: 80, name: 'alice' }
+console.log(arr1); // [1, 2, 3]
+console.log(arr2); // [1, 2, 3, 4]
+console.log(obj1); // { age: 23, name: 'alice' }
+console.log(obj2); // { age: 80, name: 'alice' }
 ```
 
 전개 연산자를 사용하면 서로 다른 두 배열이나 객체를 쉽게 합칠 수 있다.
 
-```
-const obj1 = { age: 21, name: 'alice' };
-const obj2 = { address: 'seoul' };
-const obj3 = { ...obj1, ...obj2 };      // { age: 21, name: 'alice', address: 'seoul' }
+```js
+const obj1 = { age: 21, name: "alice" };
+const obj2 = { address: "seoul" };
+const obj3 = { ...obj1, ...obj2 }; // { age: 21, name: 'alice', address: 'seoul' }
 
 const arr1 = [1, 3, 5];
 const arr2 = [2, 4, 6];
-const arr3 = [...arr1, ...arr2];        // [1, 3, 5, 2, 4, 6]
+const arr3 = [...arr1, ...arr2]; // [1, 3, 5, 2, 4, 6]
 ```
 
 ES5 까지는 중복된 속성명으로 합치면 에러가 발생했지만 ES6 부터는 허용된다.
 
 마지막에 입력된 값이 최종값이 된다.
 
-```
-const obj1 = { age: 21, name: 'alice' };
-const obj2 = { name: 'bob' };
-const obj3 = { ...obj1, ...obj2 };      // { age: 21, name: 'bob' }
-const obj4 = { ...obj2, ...obj1 };      // { name: 'alice', age: 21 }
+```js
+const obj1 = { age: 21, name: "alice" };
+const obj2 = { name: "bob" };
+const obj3 = { ...obj1, ...obj2 }; // { age: 21, name: 'bob' }
+const obj4 = { ...obj2, ...obj1 }; // { name: 'alice', age: 21 }
 ```
 
 ### 2.2. 비구조화
@@ -129,41 +131,41 @@ const obj4 = { ...obj2, ...obj1 };      // { name: 'alice', age: 21 }
 
 배열의 속성값이 왼쪽 변수에 순서대로 들어간다.
 
-```
+```js
 const arr = [1, 2];
-const [a, b] = arr;     // a: 1, b: 2
+const [a, b] = arr; // a: 1, b: 2
 ```
 
 배열 비구조화 정의 시 기본값을 설정할 수 있다.
 
 만약 기본값도 없고 할당되는 값도 없다면 undefined 가 된다.
 
-```
+```js
 const arr = [1];
-const [a = 10, b = 20] = arr;       // a: 1, b: 20
+const [a = 10, b = 20] = arr; // a: 1, b: 20
 ```
 
 두 값을 교환할 수도 있다.
 
-```
+```js
 let a = 1;
 let b = 2;
-[a, b] = [b, a];        // a: 2, b: 1
+[a, b] = [b, a]; // a: 2, b: 1
 ```
 
 일부 속성값을 무시할 수도 있다.
 
-```
+```js
 const arr = [1, 2, 3];
-const [a, , c] = arr;       // a: 1, c: 3
+const [a, , c] = arr; // a: 1, c: 3
 ```
 
 나머지 값을 별도의 배열로 만들 수도 있다.
 
-```
+```js
 const arr = [1, 2, 3];
-const [first, ...rest] = arr;       // first: 1, rest: [2, 3]
-const [a, b, c, ...empty] = arr;    // a: 1, b: 2, c: 3, empty: []
+const [first, ...rest] = arr; // first: 1, rest: [2, 3]
+const [a, b, c, ...empty] = arr; // a: 1, b: 2, c: 3, empty: []
 ```
 
 ### 2.2.2. 객체 비구조화
@@ -174,18 +176,18 @@ const [a, b, c, ...empty] = arr;    // a: 1, b: 2, c: 3, empty: []
 
 그리고 Object 에 존재하는 키와 동일한 이름의 변수명을 사용해야 한다.
 
-```
-const obj = { age: 21, name: 'alice' };
-const { age, name } = obj;      // age: 21, name: 'alice'
-const { name, age } = obj;      // age: 21, name: 'alice'
-const { a, b } = obj;           // a: undefined, b: undefined
+```js
+const obj = { age: 21, name: "alice" };
+const { age, name } = obj; // age: 21, name: 'alice'
+const { name, age } = obj; // age: 21, name: 'alice'
+const { a, b } = obj; // a: undefined, b: undefined
 ```
 
 임의로 다른 변수명에 할당할 수도 있다.
 
-```
-const obj = { age: 21, name: 'alice' };
-const { age: age2, name } = obj;        // age: not defined error, age2: 21, name: 'alice'
+```js
+const obj = { age: 21, name: "alice" };
+const { age: age2, name } = obj; // age: not defined error, age2: 21, name: 'alice'
 ```
 
 기본값을 정의할 수 있다.
@@ -194,8 +196,8 @@ const { age: age2, name } = obj;        // age: not defined error, age2: 21, nam
 
 기본값 세팅과 다른 변수명에 할당을 동시에 사용할 수도 있다.
 
-```
-const obj = { age: undefined, name: null, grade: 'A' };
-const { age: age2 = 0, name = 'noName', grade = 'F', address = 'seoul' } = obj;
+```js
+const obj = { age: undefined, name: null, grade: "A" };
+const { age: age2 = 0, name = "noName", grade = "F", address = "seoul" } = obj;
 // age: not defined error, age2: 0, name: null, grade: 'A', address: 'seoul'
 ```

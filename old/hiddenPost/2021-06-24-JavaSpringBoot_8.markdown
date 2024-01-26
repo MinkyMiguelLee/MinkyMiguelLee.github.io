@@ -18,7 +18,7 @@ categories:
 &nbsp;
 • **2. Service 코드**
 
-```
+```java
 
   // /service/MemberService
   package com.miguel.hellospring.service;

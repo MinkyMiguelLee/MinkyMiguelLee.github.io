@@ -1,21 +1,24 @@
 ---
 layout: post
-title:  "Java SpringBoot(6) - API"
-date:   2021-06-23 10:00:00 +0100
+title: "Java SpringBoot(6) - API"
+date: 2021-06-23 10:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(6) - API
+
 &nbsp;
 &nbsp;
 • **1. API**
 &nbsp;
+
 - API는 별도 view나 template 없이, 데이터 그 자체를 주고받기 위해 사용된다.
 
 &nbsp;
 &nbsp;
 • **2. API 예시**
-```
+
+```java
 
   // controller
   package com.miguel.hellospring.controller;
@@ -28,7 +31,7 @@ categories:
 
   @Controller
   public class HelloController {
-    
+
       @GetMapping("hello-string")
       @ResponseBody // http 통신 Response body에 return 값을 넣어주겠다는 것.
       public String helloString(@RequestParam("name") String name) {
@@ -57,10 +60,12 @@ categories:
   }
 
 ```
+
 &nbsp;
 &nbsp;
 ![SpringBoot api structure](../../../../assets/images/api_structure.png)
 &nbsp;
+
 - @ResponseBody : http 통신 Response body에 return 값을 넣어주겠다는 것.
 - 객체를 반환하고, @ResponseBody 일 때엔 json으로 반환하는 것이 Default
 - viewResolver 대신 HttpMessageConverter가 동작

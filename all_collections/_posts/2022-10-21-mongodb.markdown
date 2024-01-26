@@ -16,8 +16,7 @@ MongoDB는 레플리카 셋으로 설정시 구성 서버 중 하나의 서버�
 
 • 1. /etc/mongod.conf 또는 mongod 실행 시 사용할 .conf 파일에 replication 옵션을 주석처리한다.
 
-```
-
+```js
   // mongod.conf 예시
   systemLog:
     destination: file
@@ -58,7 +57,7 @@ MongoDB는 레플리카 셋으로 설정시 구성 서버 중 하나의 서버�
 
 • 2. service로 띄운 mongod을 재시작한다.
 
-```
+```bash
 
   service mongod restart
 
@@ -66,7 +65,7 @@ MongoDB는 레플리카 셋으로 설정시 구성 서버 중 하나의 서버�
 
 service 명령어가 아닌
 
-```
+```bash
 
   mongod -f /applications/mongodb/config/mongod.conf
 
@@ -74,7 +73,7 @@ service 명령어가 아닌
 
 등의 명령어로 실행시킨 경우
 
-```
+```bash
 
   ps -ef | grep mongo
 
@@ -82,7 +81,7 @@ service 명령어가 아닌
 
 명령어를 통해 mongod이 실행중인 포트를 찾아
 
-```
+```bash
 
   kill -9 포트번호
 
@@ -92,19 +91,17 @@ service 명령어가 아닌
 
 • 3. Primary로 설정할 서버에서, rs.init()을 통해 다시 설정한다.
 
-```
-
-  // 예시
-  rs.initiate({
-    _id: "scrumBy51", // .conf 파일에서 설정한 replica set 이름      
-    version: 1,      
-    members: [
-      { _id: 0, host : "10.70.152.40:27019"},
-      { _id: 1, host : "10.70.152.77:27019"},
-      { _id: 2, host : "10.70.152.59:27019"},
-    ]   
-  })
-
+```js
+// 예시
+rs.initiate({
+  _id: "scrumBy51", // .conf 파일에서 설정한 replica set 이름
+  version: 1,
+  members: [
+    { _id: 0, host: "10.70.152.40:27019" },
+    { _id: 1, host: "10.70.152.77:27019" },
+    { _id: 2, host: "10.70.152.59:27019" },
+  ],
+});
 ```
 
 • 4. 실행이 완료되었으면, .conf 파일의 replication 옵션을 다시 활성화시킨다.

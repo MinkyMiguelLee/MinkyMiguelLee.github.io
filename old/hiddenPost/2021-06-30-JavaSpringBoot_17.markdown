@@ -1,15 +1,17 @@
 ---
 layout: post
-title:  "Java SpringBoot(17) - JDBC Template"
-date:   2021-06-30 11:00:00 +0100
+title: "Java SpringBoot(17) - JDBC Template"
+date: 2021-06-30 11:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(17) - JDBC Template
+
 &nbsp;
 &nbsp;
 • **1. Spring Jdbc Template**
 &nbsp;
+
 - 순수 Jdbc와 동일한 환경설정을 하면 된다.
 - 스프링 JdbcTemplate과 MyBatis 같은 라이브러리는 JDBC API에서 본 반복 코드를 대부분 제거해준다. 하지만 SQL은 직접 작생해야 한다.
 
@@ -17,7 +19,8 @@ categories:
 &nbsp;
 • **2. Spring Jdbc Template 코드**
 &nbsp;
-```
+
+```java
 
   package com.miguel.hellospring.repository;
 

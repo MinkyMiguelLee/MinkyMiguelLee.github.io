@@ -13,7 +13,7 @@ categories:
 &nbsp;
 **스프링 컨테이너와 DB까지 연결한 통합 테스트 진행**
 
-```
+```java
 
   package com.miguel.hellospring.service;
 

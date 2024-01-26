@@ -69,14 +69,20 @@ Reflow가 발생할 때마다 표현식이 다시 계산되므로 비용이 발�
 
 하위 선택자의 룰이 적을 수록 비용이 절감된다.
 
-```
+```css
 // DON'T
-.section_service .list_service li .box_name .btn_more
-{display:block;width:100px;height:30px;}
+.section_service .list_service li .box_name .btn_more {
+  display: block;
+  width: 100px;
+  height: 30px;
+}
 
 // DO
-.section_service .list_service .btn_more
-{display:block;width:100px;height:30px;}
+.section_service .list_service .btn_more {
+  display: block;
+  width: 100px;
+  height: 30px;
+}
 ```
 
 ### **position:relative 사용 시 주의하자.**
@@ -89,47 +95,49 @@ DOM 요소의 정보를 요청하고 변경하는 코드는 같은 형태의 작
 
 **예제1 : cssText 또는 클래스명을 이용하여 수정한다.**
 
-```
+```js
 // DON'T - 최악의 경우 2번의 Reflow를 발생시킨다
-let div = document.getElementById('box');
-div.style.padding = '16px';
-div.style.width = '600px';
+let div = document.getElementById("box");
+div.style.padding = "16px";
+div.style.width = "600px";
 
 // DO - 한 번만 돔 객체를 수정한다
 // 1) cssText를 이용
-div.style.cssText = 'padding: 16px; width: 600px;';
+div.style.cssText = "padding: 16px; width: 600px;";
 
 // 2) 클래스명을 이용
-div.className += ' clsName';
+div.className += " clsName";
 ```
 
 **예제2 : 스타일 변경 작업을 그룹화하여 처리한다.**
 
-```
+```js
 // DON'T
-let width = document.getElementById('box1').style.width;
-document.getElementById('box2').style.width = width;
+let width = document.getElementById("box1").style.width;
+document.getElementById("box2").style.width = width;
 
-let height = document.getElementById('layer1').style.height;
-document.getElementById('layer2').style.height = height;
+let height = document.getElementById("layer1").style.height;
+document.getElementById("layer2").style.height = height;
 
 // DO
-let width = document.getElementById('box1').style.width;
-let height = document.getElementById('layer1').style.height;
+let width = document.getElementById("box1").style.width;
+let height = document.getElementById("layer1").style.height;
 
-document.getElementById('box2').style.width = width;
-document.getElementById('layer2').style.height = height;
+document.getElementById("box2").style.width = width;
+document.getElementById("layer2").style.height = height;
 ```
 
 ### **캐쉬를 활용하여 Reflow를 최소화한다.**
 
 브라우저는 레이아웃의 변경을 큐에 저장했다가 한 번에 실행하는 방법으로 Reflow를 줄인다. 하지만, `offset, scrollTop...`과 같은 계산된 스타일 정보를 요청할 때마다 정확한 정보를 제공하기 위해 큐를 비우고 모든 변경을 다시 적용한다. 그러므로 중복되는 수치에 대한 요청 수를 줄임으로 Reflow 비용을 최소화 할 수 있다.
 
-```
+```js
 function collect() {
-  let el = document.getElementById('box');
-    let width = el.style.width;
-    return parseInt(cw, 10) * parseInt(cw + document.documentElement.clientWidth, 10);
+  let el = document.getElementById("box");
+  let width = el.style.width;
+  return (
+    parseInt(cw, 10) * parseInt(cw + document.documentElement.clientWidth, 10)
+  );
 }
 ```
 
@@ -137,44 +145,44 @@ function collect() {
 
 노드 조각(document.createDocumentFragment), 노드 사본(el.cloneNode)를 활용하여 DOM 접근을 최소화한다.
 
-```
+```js
 // DON'T
 function ex1BadCase() {
-    var el = document.getElementById('container');
-    for (var i = 0; i < 10; i++) {
-        var a = document.createElement('a');
-        a.href = '#';
-        a.appendChild(document.createTextNode('test' + i));
-        el.appendChild(a);
-    }
-    return false;
+  var el = document.getElementById("container");
+  for (var i = 0; i < 10; i++) {
+    var a = document.createElement("a");
+    a.href = "#";
+    a.appendChild(document.createTextNode("test" + i));
+    el.appendChild(a);
+  }
+  return false;
 }
 
 // DO - 노드 조각(document.createDocumentFragment)
 function noReflow() {
-    var frag = document.createDocumentFragment();
-    for (var i = 0; i < 10; i++) {
-        var a = document.createElement('a');
-        a.href = '#';
-        a.appendChild(document.createTextNode('test' + i));
-        frag.appendChild(a);
-    }
-    document.getElementById('container').appendChild(frag);
-    return false;
+  var frag = document.createDocumentFragment();
+  for (var i = 0; i < 10; i++) {
+    var a = document.createElement("a");
+    a.href = "#";
+    a.appendChild(document.createTextNode("test" + i));
+    frag.appendChild(a);
+  }
+  document.getElementById("container").appendChild(frag);
+  return false;
 }
 
 // DO - 노드 사본(el.cloneNode)
 function noReflow() {
-    var el = document.getElementById('container');
-    var clone = el.cloneNode(true);
+  var el = document.getElementById("container");
+  var clone = el.cloneNode(true);
 
-    for (var i = 0; i < 10; i++) {
-        var a = document.createElement('a');
-        a.href = '#';
-        a.appendChild(document.createTextNode('test' + i));
-        clone.appendChild(a);
-    }
-    el.appendChild(clone);
-    return false;
+  for (var i = 0; i < 10; i++) {
+    var a = document.createElement("a");
+    a.href = "#";
+    a.appendChild(document.createTextNode("test" + i));
+    clone.appendChild(a);
+  }
+  el.appendChild(clone);
+  return false;
 }
 ```
