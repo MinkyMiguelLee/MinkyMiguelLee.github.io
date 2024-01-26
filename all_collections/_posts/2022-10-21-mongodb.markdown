@@ -52,39 +52,30 @@ MongoDB는 레플리카 셋으로 설정시 구성 서버 중 하나의 서버�
   security:
       authorization: disabled
       keyFile: /applications/mongodb/51-mongodb.key
-
 ```
 
 • 2. service로 띄운 mongod을 재시작한다.
 
 ```bash
-
   service mongod restart
-
 ```
 
 service 명령어가 아닌
 
 ```bash
-
   mongod -f /applications/mongodb/config/mongod.conf
-
 ```
 
 등의 명령어로 실행시킨 경우
 
 ```bash
-
   ps -ef | grep mongo
-
 ```
 
 명령어를 통해 mongod이 실행중인 포트를 찾아
 
 ```bash
-
   kill -9 포트번호
-
 ```
 
 를 사용하여 포트를 죽이고, 재실행한다.

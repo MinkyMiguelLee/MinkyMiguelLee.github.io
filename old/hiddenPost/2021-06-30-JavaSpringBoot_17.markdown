@@ -21,7 +21,6 @@ categories:
 &nbsp;
 
 ```java
-
   package com.miguel.hellospring.repository;
 
   import com.miguel.hellospring.domain.Member;
@@ -86,5 +85,4 @@ categories:
           };
       }
   }
-
 ```

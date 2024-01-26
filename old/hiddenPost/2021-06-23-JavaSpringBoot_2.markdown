@@ -36,7 +36,6 @@ categories:
             return "hello"; // template 'hello.html'을 찾아 해당 템플릿을 실행하라(render 하라) 는 것.
         }
     }
-
 ```
 
 &nbsp;

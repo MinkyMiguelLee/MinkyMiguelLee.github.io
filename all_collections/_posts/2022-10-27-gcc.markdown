@@ -7,7 +7,6 @@ categories: ["tips", "npm"]
 
 ```bash
 npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')}catch(e){}"`
-
 ```
 
 다른 원인이 있을 수도 있겠지만, 나의 경우에는 gcc / g++가 설치되지 않아 발생한 오류이다.
@@ -29,7 +28,6 @@ npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')
   // root 권한에서
   yum -y install gcc
   yum -y install gcc-c++
-
 ```
 
 위의 명령어를 통해 gcc / g++ 를 설치한 후 정상적으로 postinstall script가 실행되는 것을 확인하였다.

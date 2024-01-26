@@ -26,7 +26,6 @@ categories: ["study", "React.js"]
     // 컴포넌트 생성 시 가장 먼저 수행하고자 하는 작업 수행
     ...
   }
-
 ```
 
 • **getDerivedStateFromProps** : Props로 받은 값을 State에 동기화시키고 싶을 때 사용.
@@ -46,7 +45,6 @@ props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
       return null;
     }
   }
-
 ```
 
 • **render** : 만들 Dom과 Tag등을 이 곳에 정의한다.
@@ -60,7 +58,6 @@ props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
   componentDidMount(){
     ...
   }
-
 ```
 
 ---
@@ -83,7 +80,6 @@ props가 바뀔 때에도 사용된다. static 형태로 선언해야 함.
     // 이 함수를 별도로 설정해주지 않는다면, 기본적으로 return true;
     return true;
   }
-
 ```
 
 • **getSnapshotBeforeUpdate** : 컴포넌트 업데이트 후, rendering 결과가 브라우저상에 반영되기
@@ -99,7 +95,6 @@ return 하여, 그 return값을 componentDidUpdate에서
     // 여기서 리턴한 값을 componentDidupdate에서 snapshot이라는 parameter로
     // 받아서 사용할 수 있다.
   }
-
 ```
 
 • **componentDidUpdate** : Updating 작업 후, component가 update 완료된 후 호출되는 함수.
@@ -109,7 +104,6 @@ return 하여, 그 return값을 componentDidUpdate에서
     // 업데이트 이전 값을 받아올 수 있다.
     // 예를 들어, 특정 props 값이 변경되었을 때 이를 확인하여 작업을 수행할 수 있다.
   }
-
 ```
 
 ---
@@ -125,7 +119,6 @@ return 하여, 그 return값을 componentDidUpdate에서
     // 컴포넌트가 사라질 때 수행한다. 특정 조건일 때 이 함수를 호출하여 특정 작업을
     // 수행하도록 할 수 있다.
   }
-
 ```
 
 ---
@@ -143,5 +136,4 @@ componentDidCatch를 사용하여 크래쉬를 방지하고 특정 작업을
     // error : 어떤 에러가 발생했는지
     // info : 에러 발생 위치 등 정보...
   }
-
 ```

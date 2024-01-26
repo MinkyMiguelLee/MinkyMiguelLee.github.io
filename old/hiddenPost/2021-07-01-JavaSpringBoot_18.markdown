@@ -24,7 +24,6 @@ categories:
 • **build.gradle 파일에 JPA, H2 관련 라이브러리 추가**
 
 ```java
-
   dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -35,7 +34,6 @@ categories:
       exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
   }
-
 ```
 
 &nbsp;
@@ -47,7 +45,6 @@ categories:
 • **스프링 부트에 JPA 설정 추가**
 
 ```java
-
   // /resources/application.properties
   spring.datasource.url=jdbc:h2:tcp://localhost/~/test
   spring.datasource.driver-class-name=org.h2.Driver
@@ -55,7 +52,6 @@ categories:
 
   spring.jpa.show-sql=true
   spring.jpa.hibernate.ddl-auto=none
-
 ```
 
 &nbsp;
@@ -69,9 +65,7 @@ categories:
 • **JPA Entity Mapping**
 
 ```java
-
   // /domain/Member
-
   package com.miguel.hellospring.domain;
 
   import javax.persistence.Entity;
@@ -103,7 +97,6 @@ categories:
           this.name = name;
       }
   }
-
 ```
 
 &nbsp;
@@ -160,7 +153,6 @@ categories:
           return result;
       }
   }
-
 ```
 
 &nbsp;
@@ -181,7 +173,6 @@ categories:
   .
   .
   .
-
 ```
 
 &nbsp;
@@ -222,5 +213,4 @@ categories:
           return new JpaMemberRepository(em);
       }
   }
-
 ```

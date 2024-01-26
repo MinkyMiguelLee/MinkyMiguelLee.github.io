@@ -48,5 +48,4 @@ javascript debugger 사용 방법에 대해 정리한다.
       .
       .
   }
-
 ```

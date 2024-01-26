@@ -14,7 +14,6 @@ categories:
 • **build.gradle 파일에 jdbc, h2 DB 관련 라이브러리 추가**
 
 ```java
-
   plugins {
 	id 'org.springframework.boot' version '2.5.1'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -42,7 +41,6 @@ categories:
   test {
     useJUnitPlatform()
   }
-
 ```
 
 &nbsp;
@@ -50,12 +48,10 @@ categories:
 • **스프링 부트 데이터베이스 연결 설정 추가**
 
 ```java
-
   // /resources/application.properties
   spring.datasource.url=jdbc:h2:tcp://localhost/~/test
   spring.datasource.driver-class-name=org.h2.Driver
   spring.datasource.username=sa
-
 ```
 
 &nbsp;
@@ -66,7 +62,6 @@ categories:
 • **스프링 설정 변경**
 
 ```java
-
   // /main/java/com.miguel.hellospring/SpringConfig
 
   .
@@ -98,7 +93,6 @@ categories:
           // 했을 뿐인데, 정상적으로 H1 DB 사용이 가능하다.
       }
   }
-
 ```
 
 &nbsp;

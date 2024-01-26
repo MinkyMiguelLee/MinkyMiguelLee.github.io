@@ -62,7 +62,6 @@ function UserList() {
 }
 
 export default UserList;
-
 ```
 
 위 코드에서, 우리는 `average`가 즉시 실행되어 `Average`컴포넌트의 props로 전달되는 것을 볼 수 있다.
@@ -205,7 +204,6 @@ function Button({ onClick }) {
 }
 
 export default memo(Button);
-
 ```
 
 onClick 함수는 `UserList`에서 전달받고 있다고 한다.UserList는 input에 타이핑을 할때마다, 자식(Button) 트리를 포함하여 리렌더링 된다.그런데 리렌더링마다 addUser라는 함수를 새로 생성하여 Button 컴포넌트에 props로 전달해주고 있다.여기서 `Button` 컴포넌트는 불필요한 렌더링을 막기 위해 memo를 이용하여 memoize 되어 있다.React.memo는 현재와 다음 props를 비교하여 이전 props와 같다면 컴포넌트를 리렌더링 하지 않는다.
@@ -281,7 +279,6 @@ function Item({ user, result }) {
 }
 
 export default Item;
-
 ```
 
 그래서 이럴때는, 아래 코드처럼 생성자 함수나 객체 리터럴로 객체를 생성해서 하위 컴포넌트로 넘겨주는 방식이 아닌, state를 그대로 하위컴포넌트에 넘겨주어 필요한 데이터 가공을 그 하위컴포넌트에서 해주는 것이 좋다.
@@ -337,7 +334,6 @@ function Item({ user }) {
 }
 
 export default memo(Item);
-
 ```
 
 # **5. 컴포넌트를 매핑할 때에는 key값으로 index를 사용하지 않는다.**
@@ -422,7 +418,6 @@ function UserList() {
 }
 
 export default UserList;
-
 ```
 
 이렇게 말고도 더 deep하고 알아갈 부분들이 많지만, 이번 시간엔 실생활에서 바로 적용할 수있는 최적화 방법에 대해 알아보았다.리액트는 단방향 하향식 데이터 흐름을 가지고 있어, 부모 컴포넌트에서 자식 컴포넌트 방향으로 데이터(props, state)가 흘러간다.이 데이터들의 변화는 컴포넌트를 리렌더링시키는데, state는 그것이 선언된 컴포넌트 내에서 사용되고, props는 부모 컴포넌트로부터 받은 데이터이다. 이 기본 구조를 숙지하고 가면 최적화 방법이 쉽게 적용 가능하다.

@@ -25,7 +25,6 @@ VS Code의 현재 프로젝트 전체 파일에 Prettier formatting을 수행하
 
 ```bash
   npm run pretty
-
 ```
 
 를 수행하면, 프로젝트 전체 파일에 위 스크립트에서 정의한 파일 형식 전체에 prettier formatting이 수행된다.

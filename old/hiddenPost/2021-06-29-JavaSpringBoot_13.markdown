@@ -13,7 +13,6 @@ categories:
 &nbsp;
 
 ```java
-
   // /src/java/hello.hellospring/controller/MemberController
   .
   .
@@ -43,7 +42,6 @@ categories:
           return "redirect:/"; // 완료후 홈 화면으로 redirect
       }
   }
-
 ```
 
 &nbsp;
@@ -52,7 +50,6 @@ categories:
 &nbsp;
 
 ```java
-
   // /src/java/hello.hellospring/controller/MemberForm
   package com.miguel.hellospring.controller;
 
@@ -68,7 +65,6 @@ categories:
       }
 
   }
-
 ```
 
 &nbsp;

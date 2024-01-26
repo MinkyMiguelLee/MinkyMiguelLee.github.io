@@ -13,7 +13,6 @@ categories:
 &nbsp;
 
 ```java
-
   // /src/java/hello.hellospring/controller/MemberController
   .
   .
@@ -43,7 +42,6 @@ categories:
           return "redirect:/";
       }
   }
-
 ```
 
 &nbsp;
