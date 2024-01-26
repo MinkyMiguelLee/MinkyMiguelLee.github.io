@@ -1,16 +1,18 @@
 ---
 layout: post
-title:  "Java SpringBoot(16) - Spring 통합 테스트"
-date:   2021-06-30 11:00:00 +0100
+title: "Java SpringBoot(16) - Spring 통합 테스트"
+date: 2021-06-30 11:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(16) - Spring 통합 테스트
+
 &nbsp;
 &nbsp;
 • **1. 통합 테스트 코드**
 &nbsp;
 **스프링 컨테이너와 DB까지 연결한 통합 테스트 진행**
+
 ```
 
   package com.miguel.hellospring.service;
@@ -64,12 +66,14 @@ categories:
           IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
 
           //then
-          assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다");
+          assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원이다");
       }
   }
 
 ```
+
 &nbsp;
 &nbsp;
+
 - @SpringBootTest // 스프링 컨테이너와 테스트를 함께 실행한다
 - @Transactional // Test 시작시 Transaction 실행 -> DB 쿼리 수행 -> 테스트 완료시 commit하지 않고 rollback. 이렇게 하면 DB에 데이터가 남지 않으므로 다음 테스트에 영향을 주지 않는다.

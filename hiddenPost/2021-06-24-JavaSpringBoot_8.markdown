@@ -1,20 +1,23 @@
 ---
 layout: post
-title:  "Java SpringBoot(8) - Service 개발"
-date:   2021-06-24 10:00:00 +0100
+title: "Java SpringBoot(8) - Service 개발"
+date: 2021-06-24 10:00:00 +0100
 categories:
 ---
 
 # Java SpringBoot(8) - Service 개발
+
 &nbsp;
 &nbsp;
 • **1. Service**
 &nbsp;
+
 - 앞에서 구현한 repository를 기반으로 한 비즈니스 로직 개발
 
 &nbsp;
 &nbsp;
 • **2. Service 코드**
+
 ```
 
   // /service/MemberService
@@ -42,7 +45,7 @@ categories:
       private void validateDuplicatedMember(Member member) {
           memberRepository.findByName(member.getName()) // Optional<Nember> 로 리턴됨.
               .ifPresent(m->{ // Optional 내장 메서드...
-              throw new IllegalStateException("이미 존재하는 회원입니다");
+              throw new IllegalStateException("이미 존재하는 회원이다");
           });
       }
 
@@ -59,9 +62,11 @@ categories:
   }
 
 ```
+
 &nbsp;
 &nbsp;
 • **3. 단축키**
+
 - Command + Option + v : 자동으로 리턴할 변수를 만들어줌
 - Ctrl + t : 리팩토링과 관련된 기능들을 사용할 수 있음. (ex. 어떤 기능을 메서드로 extract...)
 - Command + shift + t : 새로운 테스트코드 생성
