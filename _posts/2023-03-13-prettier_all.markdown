@@ -27,7 +27,7 @@ VS Code의 현재 프로젝트 전체 파일에 Prettier formatting을 수행하
 이후,
 
 ```
-  npm run prettier
+  npm run pretty
 
 ```
 
