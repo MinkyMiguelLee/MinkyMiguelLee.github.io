@@ -2,11 +2,9 @@
 layout: post
 title: "ES6 - Object & Array"
 date: 2024-01-25 10:37:00 +0100
-categories:
+categories: ["study", "javaScript"]
 published: true
 ---
-
-# ES6 - Object & Array
 
 # 객체와 배열의 사용성 개선
 

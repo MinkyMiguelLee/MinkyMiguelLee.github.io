@@ -2,11 +2,9 @@
 layout: post
 title: "reduce / map / filter"
 date: 2024-01-25 10:43:00 +0100
-categories:
+categories: ["study", "javaScript"]
 published: true
 ---
-
-# reduce / map / filter
 
 ### for문
 

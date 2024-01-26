@@ -2,12 +2,9 @@
 layout: post
 title: "MacOS용 SSH Tool - Termius"
 date: 2021-06-22 11:21:00 +0100
-categories:
+categories: ["tips", "tools"]
 ---
 
-# Termius
-
-&nbsp;
 ![TermiusMain](../../../../../assets/images/Termius_main.png)
 &nbsp;
 &nbsp;

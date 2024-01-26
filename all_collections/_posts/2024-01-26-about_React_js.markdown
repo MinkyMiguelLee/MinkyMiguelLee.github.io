@@ -2,11 +2,9 @@
 layout: post
 title: "about React.js"
 date: 2024-01-25 10:32:00 +0100
-categories:
+categories: ["study", "React.js"]
 published: true
 ---
-
-# about React.js
 
 ### **다국어 페이지는 어떤 방식으로 제공하나?**
 

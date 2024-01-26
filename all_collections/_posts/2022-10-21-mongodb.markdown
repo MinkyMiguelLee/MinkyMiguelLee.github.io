@@ -2,12 +2,9 @@
 layout: post
 title: "mongodb - replica set 구성 실패시 재구성"
 date: 2022-10-21 15:50:00 +0100
-categories:
+categories: ["tips", "mongoDB"]
 ---
 
-# mongodb - replica set 구성 실패시 재구성
-
-&nbsp;
 MongoDB 이전 설치 중 replica set 이슈로 인해 다시 replica set을 설정해야 하는 상황이 되었다.
 MongoDB는 레플리카 셋으로 설정시 구성 서버 중 하나의 서버가 priority를 기반으로 자체적으로 Primary를 설정한다.
 이 때, 세 개의 서버가 모두 스스로를 Secondary로 인식하는 이슈가 발생하였다.

@@ -2,12 +2,9 @@
 layout: post
 title: "React - 배열 조작"
 date: 2021-03-29 12:31:00 +0100
-categories: "study"
+categories: ["study", "React.js"]
 ---
 
-# react - 배열 조작 등
-
-&nbsp;
 • 리액트에서는 **불변성**을 항상 지켜줘야 한다. 어떤 값을 수정하게 될 때, 꼭 **setState**를 사용해야 하며
 기존의 배열이나 객체를 수정할 때에는 값을 할당하지 말고 새 객체를 만들어 값을 주입하는 방식으로
 사용해야 한다. 배열의 경우,

@@ -2,12 +2,9 @@
 layout: post
 title: "VS Code - 프로젝트 전체에 organize import(import 정리) 적용하기"
 date: 2024-01-19 12:30:00 +0100
-categories:
+categories: ["tips", "vsCode"]
 ---
 
-# VS Code - 프로젝트 전체에 organize import(import 정리) 적용하기
-
-&nbsp;
 VS Code의 현재 프로젝트 전체 파일에 organize import 를 적용하기 위해,
 먼저 파일 저장 시점에 organize import를 수행하도록 설정을 변경한다.
 

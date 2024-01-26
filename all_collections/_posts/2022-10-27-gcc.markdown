@@ -2,12 +2,8 @@
 layout: post
 title: "npm - postinstall error 발생시"
 date: 2022-10-27 17:54:00 +0100
-categories:
+categories: ["tips", "npm"]
 ---
-
-# npm - failed at postinstall 에러 발생시
-
-&nbsp;
 
 ```
 npm ERR! core-js-pure@3.26.0 postinstall: `node -e "try{require('./postinstall')}catch(e){}"`

@@ -2,11 +2,9 @@
 layout: post
 title: "[스크랩] 성능 최적화(Hooks)"
 date: 2024-01-25 10:42:00 +0100
-categories:
+categories: ["study", "React.js"]
 published: true
 ---
-
-# [스크랩] 성능 최적화(Hooks)
 
 오늘은 그동안 React를 공부하고 알아왔던, class기반이 아닌 hooks 기반의 성능 최적화에 대한 방법들을 포스팅 하고자 한다.
 

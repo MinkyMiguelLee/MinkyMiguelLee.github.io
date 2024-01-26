@@ -2,11 +2,9 @@
 layout: post
 title: "ES6 - Function"
 date: 2024-01-25 10:35:00 +0100
-categories:
+categories: ["study", "javaScript"]
 published: true
 ---
-
-# ES6 - Function
 
 # 강화된 함수의 기능
 

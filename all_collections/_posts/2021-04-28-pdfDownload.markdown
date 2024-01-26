@@ -1,13 +1,10 @@
 ---
 layout: post
-title:  "React - puppeteer를 활용한 PDF 다운로드 기능 개발"
-date:   2021-04-28 11:20:00 +0100
-categories:
+title: "React - puppeteer를 활용한 PDF 다운로드 기능 개발"
+date: 2021-04-28 11:20:00 +0100
+categories: ["React.js"]
 ---
 
-# React - puppeteer를 활용한 PDF 다운로드 기능 개발
-&nbsp;
-&nbsp;
 리액트로 M심의봇 프로젝트를 이관하던 중, 기존 서비스에서 지원하던 기능인 '화면 PDF로 다운받기' 기능을 구현하기 위해 다양한 react 패키지를 활용해
 시도해 보았지만, 결코 쉬운 일이 아니였다.
 보통 html2canvas와 jsPDF 패키지를 활용한 방법을 사용하는 것 같은데, 내 경우 외부 서버에서 링크되어 있는 이미지들이 다수 포함되어 있는 화면을
@@ -18,6 +15,7 @@ categories:
 만들어 frontend로 반환하는 api를 구현하였다.
 &nbsp;
 &nbsp;
+
 ```
 // backend -> utilTestController.js
 module.exports.printPDF = async (req, res) => {
@@ -37,11 +35,13 @@ module.exports.printPDF = async (req, res) => {
   }
 };
 ```
+
 &nbsp;
 &nbsp;
 그 다음, 반환받은 buffer를 파일 형식으로 떨어트리도록 frontend에 함수를 구현하였다.
 &nbsp;
 &nbsp;
+
 ```
 // frontend -> ViewSpecificModal.js
 const getPDF = () => {
@@ -68,6 +68,7 @@ const downloadPdf = () => {
   .catch(err => console.log('123'))
 }
 ```
+
 &nbsp;
 &nbsp;
 이렇게 프론트엔드, 백엔드에 구현하게 되면, 백엔드 API의
@@ -78,6 +79,7 @@ await page.goto('https://google.com', { waitUntil: 'networkidle0' });
 메인 경로가 아닌 /pdf 경로를 별도로 만들어주고, 그 화면에 dom을 전달하여 화면을 구성하도록 하였다.
 &nbsp;
 &nbsp;
+
 ```
 // frontend -> App.js
 import PageTop from './components/PageTop';
@@ -103,6 +105,7 @@ function App() {
 
 export default App;
 ```
+
 &nbsp;
 &nbsp;
 이후, props 형태의 데이터 전달을 시도해 보았지만 headless chrome이 화면을 열 때는 해당 화면이 데이터를 가지고 있지 않는 문제가 발생했다.
@@ -111,6 +114,7 @@ export default App;
 파라미터를 저장하였다가, 화면이 열릴 때 다음과 같은 형태로 해당 내용을 불러와 화면을 그린다.
 &nbsp;
 &nbsp;
+
 ```
 // frontend -> Pdf.js
 const Pdf = () => {
@@ -123,7 +127,7 @@ const Pdf = () => {
       headers: {},
       data : {div : '123'}
     };
-  
+
     axios(config)
       .then((response) => {
         setTmpInnerHtml(response.data.tmpInnerHtml);
@@ -138,24 +142,12 @@ const Pdf = () => {
   return (
     <div>
       <div id='mainScreen' dangerouslySetInnerHTML={{__html : tmpInnerHtml}} />
-    </div> 
+    </div>
   );
 };
 ```
+
 &nbsp;
 &nbsp;
 아직 정확히 파악하지 못한 문제로 인해 다운받은 PDF의 화면 구성이 다소 엉망이긴 하지만, 이런 과정을 통해 원하는 내용을 PDF로 다운로드 받는 데 성공하였다.
 이제 화면 구성 정리를 마치면 원하는 기능 구현은 마무리될 것 같다.
-
-
-
-
-
-
-
-
-
-
-
-
-

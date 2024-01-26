@@ -2,13 +2,9 @@
 layout: post
 title: "React - LifeCycle"
 date: 2021-03-10 15:44:00 +0100
-categories: "study"
+categories: ["study", "React.js"]
 ---
 
-# React의 LifeCycle
-
-&nbsp;
-&nbsp;
 ![LifeCycle](../../../../../assets/images/lifeCycle.png)
 
 위 이미지에 표현된 각각의 박스들은 모두 일종의 함수이다.

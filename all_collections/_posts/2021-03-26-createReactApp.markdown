@@ -2,12 +2,9 @@
 layout: post
 title: "React 개발 tips"
 date: 2021-03-29 11:31:00 +0100
-categories: "study"
+categories: ["study", "React.js"]
 ---
 
-# react 개발 tips
-
-&nbsp;
 visual studio code(VSCode) 에서 확장 프로그램 'Reactjs code snippets'를 설치하면, react 개발 생산성을 상당히 높일 수 있다.
 
 1. 새로운 component를 작성하기 위해 .js 파일을 만든 후, 빈 파일에 rcc를 입력하고 엔터를 누르면, 클래스 형태의

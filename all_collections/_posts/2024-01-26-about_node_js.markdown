@@ -2,11 +2,9 @@
 layout: post
 title: "about node.js"
 date: 2024-01-25 10:31:00 +0100
-categories:
+categories: ["study", "node.js"]
 published: true
 ---
-
-# about node.js
 
 1. node.js 란?
    1. 오픈 소스 크로스 플랫폼 환경으로, 개발자로 하여금 클라이언트의 브라우저 밖에서 웹앱을 실행시킬 수 있도록 한다.

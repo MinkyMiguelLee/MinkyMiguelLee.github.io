@@ -2,12 +2,8 @@
 layout: post
 title: "VS Code - javascript Debugger"
 date: 2022-12-06 13:46:00 +0100
-categories:
+categories: ["tips", "vsCode"]
 ---
-
-# VS Code - javascript Debugger
-
-&nbsp;
 
 기존 vscode에서 javascript 코드 디버깅을 진행할 때에는 Debugger for Chrome을 사용하였지만,
 해당 확장 툴이 deprecated 된 관계로 최근에는 javascript debugger를 사용한다.

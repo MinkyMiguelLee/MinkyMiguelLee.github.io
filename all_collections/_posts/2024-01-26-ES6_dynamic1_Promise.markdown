@@ -2,11 +2,9 @@
 layout: post
 title: "ES6 비동기 프로그래밍 1 - Promise"
 date: 2024-01-25 10:39:00 +0100
-categories:
+categories: ["study", "javaScript"]
 published: true
 ---
-
-# ES6 비동기 프로그래밍 1 - Promise
 
 # 프로미스 (Promise)
 

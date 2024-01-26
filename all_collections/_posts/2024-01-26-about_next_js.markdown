@@ -2,11 +2,9 @@
 layout: post
 title: "about Next.js"
 date: 2024-01-25 10:30:00 +0100
-categories:
+categories: ["study", "Next.js"]
 published: true
 ---
-
-# Next.js
 
 ### **SSR을 쉽게 구현하도록 도와주는 프레임워크**
 

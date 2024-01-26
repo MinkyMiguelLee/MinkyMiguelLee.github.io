@@ -2,12 +2,9 @@
 layout: post
 title: "VS Code - 프로젝트 전체에 prettier formatting 수행하기"
 date: 2023-03-12 16:21:00 +0100
-categories:
+categories: ["tips", "vsCode"]
 ---
 
-# VS Code - 프로젝트 전체에 prettier formatting 수행하기
-
-&nbsp;
 VS Code의 현재 프로젝트 전체 파일에 Prettier formatting을 수행하기 위해, 먼저 prettier를 설치한다.
 
 이후, package.json에 다음과 같은 script를 추가한다.
