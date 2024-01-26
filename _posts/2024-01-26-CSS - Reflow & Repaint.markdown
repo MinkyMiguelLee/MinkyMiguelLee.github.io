@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "CSS - Reflow & Repaint"
-date: 2024-01-26 10:30:00 +0100
+date: 2024-01-26 10:33:00 +0100
 categories:
+published: true
 ---
 
 # CSS - Reflow & Repaint

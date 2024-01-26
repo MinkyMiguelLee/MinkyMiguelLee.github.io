@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "ES6 - Object & Array"
-date: 2024-01-26 10:30:00 +0100
+date: 2024-01-26 10:37:00 +0100
 categories:
+published: true
 ---
 
 # ES6 - Object & Array

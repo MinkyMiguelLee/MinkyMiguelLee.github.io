@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "FE 개발자 / JavaScript 공부 내역 요약정리"
-date: 2024-01-26 12:30:00 +0100
+date: 2024-01-26 10:44:00 +0100
 categories:
+published: true
 ---
 
 # FE 개발자 / JavaScript 공부 내역 요약정리

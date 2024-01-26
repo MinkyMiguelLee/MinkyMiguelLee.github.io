@@ -3,6 +3,7 @@ layout: post
 title: "about Next.js"
 date: 2024-01-26 10:30:00 +0100
 categories:
+published: true
 ---
 
 # Next.js

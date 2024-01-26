@@ -1,8 +1,9 @@
 ---
 layout: post
 title: "ES6 비동기 프로그래밍 2 - Async & Await"
-date: 2024-01-26 10:30:00 +0100
+date: 2024-01-26 10:40:00 +0100
 categories:
+published: true
 ---
 
 # ES6 비동기 프로그래밍 2 - Async & Await
