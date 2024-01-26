@@ -1,0 +1,20 @@
+title: "Miguel Minky Lee"
+description: "안녕하세요! Web Frontend 개발자 이민기 Miguel입니다☺️"
+baseurl: ""
+url: "https://minkymiguellee.github.io"
+name: "Miguel Lee"
+
+futrue: true
+
+header_pages:
+  - index.md
+  - miguel.md
+  - miguelEn.md
+
+style: dark
+
+footer: "contact - zzon2004@gmail.com"
+
+# Build settings
+markdown: kramdown
+remote_theme: b2a3e8/jekyll-theme-console
