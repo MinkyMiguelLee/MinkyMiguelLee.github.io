@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ES6 - Variable"
-date: 2024-01-26 10:38:00 +0100
+date: 2024-01-25 10:38:00 +0100
 categories:
 published: true
 ---

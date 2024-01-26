@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "ES6 - Iterator Iterable Generator"
-date: 2024-01-26 10:36:00 +0100
+date: 2024-01-25 10:36:00 +0100
 categories:
 published: true
 ---

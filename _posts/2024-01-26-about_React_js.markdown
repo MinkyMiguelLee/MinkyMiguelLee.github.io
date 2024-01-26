@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "about React.js"
-date: 2024-01-26 10:32:00 +0100
+date: 2024-01-25 10:32:00 +0100
 categories:
 published: true
 ---

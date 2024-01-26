@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "JavaScript - 중요 Function 모음"
-date: 2024-01-26 10:41:00 +0100
+date: 2024-01-25 10:41:00 +0100
 categories:
 published: true
 ---
