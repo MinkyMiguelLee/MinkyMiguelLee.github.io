@@ -601,7 +601,7 @@ for (let i = 0; i < practice.length; i++) {
 
 - `forEach`
 
-  ```
+  ```js
   const practice = [
     { name: "개발자", value: 150, active: false },
     { name: "퉁이리", value: 200, active: true },
@@ -622,7 +622,7 @@ for (let i = 0; i < practice.length; i++) {
 
 - `map`
 
-  ```
+  ```js
   const practice = [
     { name: "개발자", value: 150, active: false },
     { name: "퉁이리", value: 200, active: true },
@@ -642,7 +642,7 @@ for (let i = 0; i < practice.length; i++) {
 
 - `filter`
 
-  ```
+  ```js
   const practice = [
     { name: "개발자", value: 150, active: false },
     { name: "퉁이리", value: 200, active: true },
@@ -663,7 +663,7 @@ for (let i = 0; i < practice.length; i++) {
 
 - `reduce`
 
-  ```
+  ```js
   const practice = [
     { name: "개발자", value: 150, active: false },
     { name: "퉁이리", value: 200, active: true },
@@ -733,7 +733,7 @@ _JavaScript는 더 이상 사용되지 않을 변수와 함수를 Heap(메모리
 
 - 고차 컴포넌트는 `컴포넌트를 매개 변수로 받아 새로운 컴포넌트를 반환하는 함수`를 의미한다.
 
-  ```
+  ```js
   import { useState } from "react";
 
   export default function withHover(InnerComponent) {
@@ -754,7 +754,7 @@ _JavaScript는 더 이상 사용되지 않을 변수와 함수를 Heap(메모리
             ...props,
             handleMouseEnter,
             handleMouseLeave,
-            isHovered
+            isHovered,
           }}
         />
       );
