@@ -3,7 +3,6 @@ layout: post
 title: "about node.js"
 date: 2024-01-25 10:31:00 +0100
 categories: ["study", "node.js"]
-published: true
 ---
 
 1. node.js 란?

@@ -3,7 +3,6 @@ layout: post
 title: "ECMAScript"
 date: 2024-01-25 10:34:00 +0100
 categories:
-published: true
 ---
 
 # ECMAScript
