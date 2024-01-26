@@ -197,7 +197,7 @@ main {
 
 .content code {
   padding: 3px 5px;
-  color: var(--white-2);
+  color: var(--yellow-1);
   white-space: pre;
   background: var(--gray-3);
 }
@@ -221,7 +221,7 @@ main {
 [data-theme="dark"] {
   .content code,
   .content pre {
-    color: var(--white-2);
+    color: var(--yellow-1);
     background: var(--gray-3);
   }
 }
