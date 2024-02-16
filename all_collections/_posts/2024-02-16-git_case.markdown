@@ -1,0 +1,16 @@
+---
+layout: post
+title: "git commit - 파일명 대소문자 변경 미인식 이슈 해결법"
+date: 2024-02-15 13:26:00 +0100
+categories: ["tips", "vsCode", "Git"]
+---
+
+파일명 형식이 잘못되어 대/소문자를 수정한 후, 커밋을 하려고 했으나 수정 내역이 잡히지 않았다.
+
+이 때,
+
+```bash
+  git config core.ignorecase false
+```
+
+위의 명령어를 터미널에 입력하면 이후 정상적으로 인식이 된다.
